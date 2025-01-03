@@ -1,7 +1,7 @@
 
 import './App.css'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import InitialPage from './componentes/InitialPage'
+import Home from './componentes/Pages/home.jsx'
 
 
 
@@ -9,9 +9,9 @@ import InitialPage from './componentes/InitialPage'
 function App() {
 
   return (
-    <BrowserRouter>
+    <BrowserRouter >
      <Routes>
-          <Route path="/" element={<InitialPage />} />
+          <Route path="/" element={<Home />} />
          
         </Routes>
      
