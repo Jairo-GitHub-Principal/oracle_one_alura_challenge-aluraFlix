@@ -20,13 +20,12 @@ const CategoriaMovieContainerStyled = styled.section` // vai  conter apenas  o c
     display: flex;
     
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     gap: 10px;
     width: 100%;
     max-width:1356.39px;
     opacity: 0px;
     box-sizing: border-box;
-    border: 1px solid yellow;
     margin-top: 40px;
     `
 export { CategoriaContainerStyled, CategoriaMovieContainerStyled };

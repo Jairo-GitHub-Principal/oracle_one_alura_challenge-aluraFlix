@@ -3,16 +3,25 @@ import PropTypes from 'prop-types'; // fazer validação de props
 
 
 // eslint-disable-next-line react/prop-types
-const Button = ({ children, size, border, width, height, weight,categoria }) => {
-    console.log(categoria);
+const Button = ({ children, $size, $border, $width, $height, $weight,$categoria,click  }) => {
+    // console.log("Button",$categoria);
+
+    const handleClick = (event) => {
+        console.log("Evento",event)
+
+        event.preventDefault(); // impede o carregamento da pagina
+            click(event);  // Chama a função passada como prop
+        
+    };
     return (
         <ButtonStyled
-            $size={size}
-            $width={width}
-            $height={height} 
-            $weight = {weight} 
-            $border = {border}
-            $categoria = {categoria}
+            $size={$size}
+            $width={$width}
+            $height={$height} 
+            $weight = {$weight} 
+            $border = {$border}
+            $categoria = {$categoria}
+            onClick={(event)=>handleClick(event)} // Função vazia como fallback
 
             >
             {children}

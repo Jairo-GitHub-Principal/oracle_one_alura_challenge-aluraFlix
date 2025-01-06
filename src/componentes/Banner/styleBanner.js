@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 const BannerStyled = styled.div`
+display: flex;
+justify-content: space-between;
+position:relative;
 width: ${(props) => props.$width || "100%"}; 
 height: ${(props) => props.$height || "100%"};
 background-image:${(props) => `url(${props.$backgroundImage})`};

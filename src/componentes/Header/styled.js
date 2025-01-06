@@ -8,6 +8,7 @@ const HeaderStyled = styled.header`
     display: flex;
     justify-content: space-between;
     width: 100%;
+    max-width:1442px;
     align-items: center;
     padding:  0;
 

@@ -1,18 +1,23 @@
 import { TextStyled, TextContainerStyled } from "./styled";
 
-const Text = (props) => {
+const Text = ({children,size,weight,color,margin,padding,lineHeight,width,maxWidth,height,textAline}) => {
   return (
     <>
-    <TextContainerStyled $maxWidth="168px" $height="40px"  >
+    <TextContainerStyled $width={width} $maxWidth= {maxWidth} $height={height}  >
       <TextStyled
-       $size={props.size} 
-       $weight={props.weight} 
-       $color={props.color} 
-       $margin={props.margin} 
-       $lineHeight={props.lineHeight}
+       $size={size} 
+       $weight={weight} 
+       $color={color} 
+       $margin={margin} 
+       $padding={padding}
+       $lineHeight={lineHeight}
+       $textAline={textAline}
+       $width={width}
+       $maxWidth= {maxWidth}
+       
        
        >
-        {props.text}
+        {children}
       </TextStyled>
       </TextContainerStyled>
     </>

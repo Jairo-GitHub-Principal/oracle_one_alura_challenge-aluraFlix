@@ -5,8 +5,12 @@ const TextStyled = styled.p`
   font-weight: ${(props) => props.$weight || "normal"};
   color: ${(props) => props.$color || "#000"};
   margin: ${(props) => props.$margin || "0"};
+  padding: ${({$padding}) => $padding || "0"};
   line-height: ${(props) => props.$lineHeight || "1.5"};
-  padding: 10px;
+  text-align: ${({$textAline}) => $textAline || "left"};
+  width: ${({$width}) => $width || "100%"};
+  text-justify:justify;
+ 
 `
 
 const TextContainerStyled = styled.div`
@@ -14,10 +18,9 @@ const TextContainerStyled = styled.div`
     justify-content: center;
     box-sizing: border-box;
     align-items: center;
-    max-width:${(props) => props.$maxWidth || "100%"};
-    width:${(props) => props.$width || "100%"};
-    height:${(props) => props.$height || "54px"};
-    border: 1px solid red;
+    max-width:${({$maxWidth}) => $maxWidth || "100%"};
+    width:${({$width}) => $width || "100%"};
+    height:${({$height}) => $height };
     padding: 10px;
     margin:0;
     

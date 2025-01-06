@@ -3,6 +3,7 @@ import Text from "../ReusableComponent/TextComponent/text.jsx"
 import Image from "../ReusableComponent/ImageComponent/img.jsx"
 import Button from "../ReusableComponent/ButtonComponent/button.jsx"
 import imgLogo from "../../assets/img/logo/logoAluraFlix.png"
+import { Link } from "react-router-dom"
 const Header = () => {
     return (
         <>
@@ -11,25 +12,26 @@ const Header = () => {
                    
                 <NavContainer>
                 <Button 
-                width="180px" 
-                height="54px" 
-                size="16px" 
-                weight="bold" 
-                color="rgba(34, 113, 209, 1)"
-                border="rgba(34, 113, 209, 1)"
-                backgroundColor="#000000"
-                >Home</Button>
+                $width="180px" 
+                $height="54px" 
+                $size="16px" 
+                $weight="bold" 
+                $color="rgba(34, 113, 209, 1)"
+                $border="rgba(34, 113, 209, 1)"
+                $backgroundColor="#000000"
+                ><Link to="/" style={{textDecoration:"none", color:"white",fontSize:"25px"}}  >Home</Link></Button>
 
 
                 <Button  
-                width="180px" 
-                height="54px" 
-                weight="bold"
-                color="rgba(255, 255, 255, 1)"
-                border="rgba(255, 255, 255, 1)"
-                backgroundColor="#000000"
+                $width="180px" 
+                $height="54px" 
+                $weight="bold"
+                $color="rgba(255, 255, 255, 1)"
+                $border="rgba(255, 255, 255, 1)"
+                $backgroundColor="#000000"
+                
                                 
-                >Novo Video</Button>
+                ><Link style={{textDecoration:"none", color:"white",fontSize:"25px"}}  to="/videos">Novo Videos</Link></Button>
                 </NavContainer>
                 
             </HeaderStyled>
