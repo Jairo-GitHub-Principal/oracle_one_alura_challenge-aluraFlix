@@ -1,6 +1,6 @@
 import { TextStyled, TextContainerStyled } from "./styled";
 
-const Text = ({children,size,weight,color,margin,padding,lineHeight,width,maxWidth,height,textAline}) => {
+const Text = ({children,size,weight,color,margin,padding,lineHeight,width,maxWidth,height,textAline,family}) => {
   return (
     <>
     <TextContainerStyled $width={width} $maxWidth= {maxWidth} $height={height}  >
@@ -14,6 +14,7 @@ const Text = ({children,size,weight,color,margin,padding,lineHeight,width,maxWid
        $textAline={textAline}
        $width={width}
        $maxWidth= {maxWidth}
+       $family={family}
        
        
        >

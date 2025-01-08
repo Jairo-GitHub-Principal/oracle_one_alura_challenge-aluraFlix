@@ -1,23 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Anton&family=Archivo+Black&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Playwrite+AU+VIC+Guides&family=Playwrite+CO+Guides&family=Press+Start+2P&family=Sixtyfour:BLED,SCAN@0..100,-24&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
-.formContainer{
+
+.form{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 43px;
+    gap: 20px;
     width: 100%;
     height: 100%;
-    max-height:1442px;
-    max-height:1140px ;
+    box-sizing:border-box ;
     background-color: #000000;
     color: #ffffff;
-    box-sizing: border-box;
-    border: 3px solid  rgba(34, 113, 209, 1);
+    border: 5px solid  rgba(34, 113, 209, 1);
     border-radius: 15px 15px ;
-    margin:0;
-    padding: 0;
 }
-
 
 label{
     width: 100%;
@@ -33,11 +29,12 @@ label{
 }
 input{
     width: 100%;
-    height: 62px;
+    height: 50px;
     border: 3px solid  rgba(34, 113, 209, 1);
     border-radius: 15px 15px ;
     background-color: #000000;
     color: #ffffff;
+    padding: 5px;
 
     font-family: "IBM Plex Mono", serif;
     font-style: normal;
@@ -48,10 +45,14 @@ input{
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
     margin: 0;
-    padding: 0;
+    
     transition: border-color 0.3s ease;
 
 }
+input::placeholder {
+    color: #fff; /* Cor do placeholder */
+    opacity: 0.4; /* Ajuste de opacidade (opcional) */
+  }
 
 input:focus {
     border-color: #2003ff; /* Altere para a cor desejada */
@@ -115,4 +116,63 @@ input:focus {
     box-shadow: 0px 0px 5px 5px rgb(0, 79, 175);
     
 }
+
+
+/*fechar o modal*/
+
+.closeButton{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+}
+
+/**Responsividade */
+
+@media (max-width: 1400px) {
+    
+   
+    label{
+        display: none;
+    }
+    input{
+        
+        padding: 0 10px;
+    }
+
+    .buttonContainer{
+        padding: 10px;
+        margin-top: -10px;
+           }
+    
+    
+}
+
+@media (max-width: 400px) {
+    
+   .form{width: 100%; }
+    label{
+        display: none;
+    }
+    input{
+        width: 80%;
+        padding: 0 10px;
+    }
+    .btn{
+        width: 45%;
+
+    }
+
+    .buttonContainer{
+        justify-content: space-around;
+        padding: 10px;
+        margin-top: -10px;
+           }
+    
+    
+}
+
+
 

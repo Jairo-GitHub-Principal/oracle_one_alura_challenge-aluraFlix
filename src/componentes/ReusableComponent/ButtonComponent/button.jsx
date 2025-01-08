@@ -7,11 +7,16 @@ const Button = ({ children, $size, $border, $width, $height, $weight,$categoria,
     // console.log("Button",$categoria);
 
     const handleClick = (event) => {
-        console.log("Evento",event)
-
-        event.preventDefault(); // impede o carregamento da pagina
-            click(event);  // Chama a função passada como prop
-        
+        console.log("Evento", event);
+    
+        event.preventDefault(); // Impede o carregamento da página
+    
+        // Verifica se `click` é uma função antes de chamá-la
+        if (typeof click === "function") {
+            click(event); // Chama a função passada como prop
+        } else {
+            console.warn("A prop `click` não é uma função válida.");
+        }
     };
     return (
         <ButtonStyled
@@ -21,7 +26,7 @@ const Button = ({ children, $size, $border, $width, $height, $weight,$categoria,
             $weight = {$weight} 
             $border = {$border}
             $categoria = {$categoria}
-            onClick={(event)=>handleClick(event)} // Função vazia como fallback
+            onClick={handleClick} // Função vazia como fallback
 
             >
             {children}

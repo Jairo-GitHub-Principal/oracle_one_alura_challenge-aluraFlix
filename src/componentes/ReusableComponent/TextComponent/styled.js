@@ -9,7 +9,9 @@ const TextStyled = styled.p`
   line-height: ${(props) => props.$lineHeight || "1.5"};
   text-align: ${({$textAline}) => $textAline || "left"};
   width: ${({$width}) => $width || "100%"};
+  font-family:${({$family}) => $family || "Arial"};
   text-justify:justify;
+  /* border: solid 1px red; */
  
 `
 

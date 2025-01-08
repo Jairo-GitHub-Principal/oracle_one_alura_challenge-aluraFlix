@@ -1,10 +1,7 @@
 
 import style from "./modalEdit.module.css";
-import {  useParams } from "react-router-dom";
-import { useContext, useState } from "react";
-import { VideosContext } from "../Context/videoContext";
 import Form from "../ReusableComponent/FormComponent/form";
-import { Link } from "react-router-dom";
+import {OverLay,ModalContainer,DialogStyled} from "./styleEdit.js";
 
 
 
@@ -13,27 +10,29 @@ const ModalEdit = ({isOpen,onClose, videoEdit }) => {
   
   
   
-    if (!isOpen) {
-      return null; // Retorna null se o modal estiver fechado
+    if (!isOpen) {// quando isOpen for falso
+      return null; //não exibe o modal
     }else{
-      return (
-        <div className={style.overlay}>
-          <div className={style.modalContent}>
-            {/* <h1>Categoria: {videoFilter.categoria}  </h1>
-            <h1>ID: {videoFilter.id}</h1>
-            <h1>src: {videoFilter.src}</h1>
-            */}
-            <button className={style.modalclose} onClick={onClose}>
-          
-            Close
-           
-            </button> 
+      return ( // exibe o modal
+        <OverLay >
+          <DialogStyled/>
+          <ModalContainer >
+                     
+            <button className={style.modalclose} onClick={ onClose}>Fechar</button>
 
-            <Form video={videoEdit}/>
+            <Form video={videoEdit} 
+                onSubmit={() => console.log("Lista atualizada!")}
+                titulo="Editar Card de Video"
+                 display="flex"
+                 flexDirection="column"
+                 alignItems="center"
+                 justifyContent="space-between"
+                 padding="30px"
+            />
             
             
-          </div>
-        </div>
+          </ModalContainer>
+        </OverLay>
       );
     }
  

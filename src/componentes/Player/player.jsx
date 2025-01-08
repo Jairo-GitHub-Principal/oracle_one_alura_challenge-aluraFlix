@@ -7,7 +7,7 @@ const Player = () => {
     const params = useParams(); // captura o parametro passado na url
     const {video} = useContext(VideosContext);
 
-    const videoFilter = video.find((video) => {return video.id === Number( params.id)})
+    const videoFilter = video.find((video) => {return video.id === params.id})
     console.log("Componente Player",videoFilter);
 
     return (

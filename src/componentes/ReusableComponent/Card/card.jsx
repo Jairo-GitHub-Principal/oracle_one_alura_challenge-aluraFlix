@@ -4,16 +4,25 @@ import { MdDelete } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
 import { FaExpand } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import {useApi}  from "../../Hooks/fetchApi/useApi.js"
 
 
 
 
 
 const Card = ({ edit, id, categoria, src }) => {
+    const {deleteVideo} = useApi();
     const handleEditClick = (event) => {
-        event.preventDefault();
+        
         const videoData = {id, categoria, src };
         edit(videoData); // Passa os dados do vídeo para o método edit
+    };
+
+    const handleDeleteClick = () => {
+       // Passa o ID do vídeo para o método deleteVideo
+       const idVideo = Number(id);
+       console.log("Delete Card",id);
+        deleteVideo(idVideo);
     };
    
     return (
@@ -30,7 +39,7 @@ const Card = ({ edit, id, categoria, src }) => {
             <CardContainerButtonStyled>
                 
                 
-                <Button $size={"2rem"}>
+                <Button click={handleDeleteClick} $size={"2rem"}>
                     <MdDelete />
                 </Button>
                 
@@ -46,18 +55,9 @@ const Card = ({ edit, id, categoria, src }) => {
                 
                      <Button 
                      $size={"2.3rem"} 
-
                      click={handleEditClick}>
+                     <CiEdit/>
 
-                          {/* <Link 
-                                style={{ textDecoration: "none", color: "white" }}
-                                to={`/edit/${props.id}`}
-                                // state={{ vd }} // Passando o objeto vd como estado
-                                > </Link> */}
-                                <CiEdit/>
-                                
-                   
-                    
                  </Button>
                 
                

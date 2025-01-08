@@ -2,8 +2,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 100%;
     max-width:1442px;
-    height: 100%;
+    height: 100vh;
     max-height: 700px;
 }
