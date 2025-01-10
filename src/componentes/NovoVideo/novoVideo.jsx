@@ -6,7 +6,10 @@ import { VideosContext } from "../../componentes/Context/videoContext"
 
 
 const NovoVideo = ({ isOpen, onClose }) => {
-    const { video, setVideo } = useContext(VideosContext)
+    const { video, setVideo } = useContext(VideosContext) /** usado para passar o setVideo para  o metodo 
+                                                              saveVideo, que o passara pa getVideos, pra 
+                                                           atualizar o estdo, apos salvar o video ou atualizar*/
+
     if (!isOpen) {// quando isOpen for falso
         return null; //não exibe o modal
     } else {
@@ -31,7 +34,6 @@ const NovoVideo = ({ isOpen, onClose }) => {
                         alignItems="center"
                         justifyContent="space-between"
                         padding="30px"
-                        video={video}
                         setVideo={setVideo}
 
                     />

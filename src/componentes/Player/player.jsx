@@ -8,7 +8,7 @@ const Player = () => {
     const {video} = useContext(VideosContext);
 
     const videoFilter = video.find((video) => {return video.id === params.id})
-    console.log("Componente Player",videoFilter);
+    // console.log("Componente Player",videoFilter);
 
     return (
         <div className={style.player} >

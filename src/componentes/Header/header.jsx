@@ -14,8 +14,10 @@ const Header = (props) => {
     return (
         <>
             <HeaderStyled>
-
+                <Link to="/" style={{ textDecoration: "none", color: "white" }}><h1>
                 <Image maxWidth="168px" height="40px" src={imgLogo} alt="Logo AluraFlix" />
+
+                    </h1></Link>
 
                 <NavContainer>
                     <Button

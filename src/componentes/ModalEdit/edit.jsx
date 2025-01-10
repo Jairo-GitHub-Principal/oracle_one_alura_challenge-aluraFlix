@@ -7,7 +7,7 @@ import { VideosContext } from "../../componentes/Context/videoContext"
 
 
 const ModalEdit = ({isOpen,onClose, videoEdit }) => {
-
+// console.log("ModalEdit",videoEdit);
   const { video, setVideo } = useContext(VideosContext)
 
   

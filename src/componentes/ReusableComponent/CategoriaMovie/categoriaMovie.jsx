@@ -37,9 +37,13 @@ const Categoria = ({edit}) => {
                         .map((video) => (
                             <Card
                                 key={video.id}
-                                src={video.src}
-                                categoria={video.categoria}
                                 id={video.id}
+                                titulo={video.titulo}
+                                categoria={video.categoria}                               
+                                img={video.img}
+                                src={video.src}
+                                descricao={video.descricao}
+                               
                                 edit={edit} // função que pega os video que sera editado
                                atualizarLista={atualizarLista}
                             />

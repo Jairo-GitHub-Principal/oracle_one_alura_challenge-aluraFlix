@@ -14,7 +14,7 @@
     background: rgba(0, 0, 0, 0.9);
     
     z-index: 1000;
-    border:solid rgb(230, 2, 40);
+    /* border:solid rgb(230, 2, 40); */
     padding: 10px;
    
     
@@ -38,7 +38,7 @@
     margin: 0;
     padding: 0;
     position: relative;
-    border:solid rgb(255, 107, 132);
+    /* border:solid rgb(255, 107, 132); */
 
 }
 
@@ -81,6 +81,7 @@
     color: white;
     transition: border-color 0.3s ease;
     font-size: 30px;
+    z-index: 1000;
 
     
 

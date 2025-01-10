@@ -16,33 +16,34 @@ function App() {
   const [editVideos, setEditVideos] = useState([null]);
   const [isModalOpen, setIsModalOpen] = useState(false); // Estado que controla a visibilidade do modal
   const [isModalOpenNovoVideo, setIsModalOpenNovoVideo] = useState(false);
-  console.log("App editVideos apos declarar", editVideos);
+  // console.log("App editVideos apos declarar", editVideos);
 
-  useEffect(() => {
-    if (editVideos) {
-      console.log("UseEffect editVideos", editVideos);
-    }
-  }, [editVideos])
-
-
+  // useEffect(() => {
+  //   if (editVideos) {
+  //     // console.log("UseEffect editVideos", editVideos);
+  //   }
+  // }, [editVideos])
 
 
-  const handleEdit = (video) => {  // essa função vai decer até chegar no card, e la vai ser chamada, e pra ela vai ser  passado os video do card de video que sera editado
-    console.log("APP handleEdit", video);
+
+
+  const handleEdit = (video) => {
+      // essa função vai decer até chegar no card, e la vai ser chamada, e pra ela vai ser  passado os video do card de video que sera editado
+    // console.log("APP Edit chegou", video);
     setEditVideos(video); // os video do card que serra editado agora vai ser passado para  o modal e do modal para o formulario
     setIsModalOpen(true); // ativa a abertura do modal
 
-    console.log("HOMEVideo para editar: ", video);
+    // console.log("HOMEVideo para editar: ", video);
   };
 
   const criarCardVideo = () => { 
    
-    console.log("CriarCardVideo chegou no APP");
+    // console.log("CriarCardVideo chegou no APP");
     setIsModalOpenNovoVideo(true); 
   };
 
   const handleCloseModal = () => { // fechar o modal
-    console.log("handleCloseModal");
+    // console.log("handleCloseModal");
     setIsModalOpen(false);
     setIsModalOpenNovoVideo(false);''
     setEditVideos(null);

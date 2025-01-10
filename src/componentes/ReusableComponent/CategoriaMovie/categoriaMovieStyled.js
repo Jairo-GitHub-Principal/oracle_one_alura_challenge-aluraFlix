@@ -9,7 +9,7 @@ const CategoriaContainerStyled = styled.div` // vai conter o titulo da categoria
     align-items:start;
     width: 100%;
     max-width:1356.39px;
-    min-height: 429px;
+    min-height: 200px;
     margin-bottom: 90px;
     background-color: #000000;
     color: #ffffff;

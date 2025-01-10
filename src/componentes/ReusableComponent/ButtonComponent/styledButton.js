@@ -21,7 +21,7 @@ const ButtonStyled = styled.button`
     background-color: ${({ $categoria }) => {
         switch ($categoria) {
             case "Front End":
-                return "rgba(107, 209, 255, 1)";
+                return "rgba(107, 209, 255, 1)"; 
             case "Back End":
                 return "rgba(0, 200, 111, 1)";
             case "Mobile":
@@ -56,6 +56,7 @@ const ButtonStyled = styled.button`
 
 &:active {
     transform: scale(0.95); /* Reduz o tamanho para 95% */
+    /* background-color : rgba(75,0,130, 0.7); */
 }
 
 `

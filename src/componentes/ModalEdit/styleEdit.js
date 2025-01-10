@@ -20,6 +20,7 @@ const DialogStyled = styled.dialog`
     padding: 0;
     border: 0;
     width: 1156px;
+    
     display: flex;
     justify-content: center;
     
@@ -36,6 +37,7 @@ background: #070000;
   position: relative;
   box-sizing: border-box;
   padding: 60px 30px;
+
   `
 
 

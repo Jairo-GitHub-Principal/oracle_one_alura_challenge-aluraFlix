@@ -16,10 +16,8 @@ export const useApi= () => {
             fetch("http://localhost:3000/videos")
                  .then((resposta) => resposta.json())
                  .then((resposta) => setVideo(resposta))
-                 console.log("UseEffect video", video);
        
 
-             console.log("UseEffect video", video);
        }
 
 

@@ -13,12 +13,13 @@ import {VideosContext} from "../../Context/videoContext.jsx"
 
 
 
-const Card = ({ edit, id, categoria, src,atualizarLista }) => {
+const Card = ({ edit, id,titulo, categoria,img,src,descricao,atualizarLista }) => {
+    // console.log("Card",{ id:id,titulo:titulo, categoria:categoria,img:img,src:src,desccricao:descricao});
 
     const {deleteVideo} = useApi();
     const handleEditClick = (event) => {
         
-        const videoData = {id, categoria, src };
+        const videoData = {id,titulo, categoria,img, src,descricao };
         edit(videoData); // Passa os dados do vídeo para o método edit
     };
    

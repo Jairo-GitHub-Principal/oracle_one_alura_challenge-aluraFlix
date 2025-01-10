@@ -9,11 +9,15 @@ import { useApi } from "../../Hooks/fetchApi/useApi"; // Ajuste o caminho confor
 
 
 const Form = (props, { onSubmit }) => {
+  // console.log("Informação do video que sera editado", props.video);
   const { saveVideo, updateVideo } = useApi(); // estraindo o saveVideo do da useApi, que prove nossos hooks personalizados
   const [formData, setFormData] = useState({ /** criamos uma estado para armazenar os dados do formulário, e 
   inicializamos com valores vazios */
-    categoria: '',
+    titulo: '',
+    categoria: '',   
+    img: '',
     src: '',
+    descricao: '',
     id: ''
   })
 
@@ -22,7 +26,7 @@ const Form = (props, { onSubmit }) => {
       setFormData({
         titulo: props.video.titulo,
         categoria: props.video.categoria,
-        src: props.video.img,
+        img: props.video.img,
         src: props.video.src,
         descricao: props.video.descricao,
         id: props.video.id
@@ -86,7 +90,7 @@ const Form = (props, { onSubmit }) => {
 
       <div className={styles.inputContainer}>
         <label htmlFor="titulo">Titulo:</label>
-        <input type="text" id="titulo" name="titulo" placeholder="Digite o titulo" onChange={handleChange} />
+        <input type="text" id="titulo" name="titulo" placeholder="Digite o titulo" value={formData.titulo || ''} onChange={handleChange} />
       </div>
 
       <div className={styles.inputContainer}>
@@ -94,7 +98,7 @@ const Form = (props, { onSubmit }) => {
         <select
           id="categoria"
           name="categoria"
-          value={formData.categoria}
+          value={formData.categoria || ''}
           onChange={handleChange}
         >
           <option value="" disabled>Selecione uma categoria</option>
@@ -111,14 +115,14 @@ const Form = (props, { onSubmit }) => {
 
       <div className={styles.inputContainer}>
         <label htmlFor="img">Imagem  </label>
-        <input type="text" id="img" name="img" placeholder="Digite o link da imagem" onChange={handleChange} />
+        <input type="text" id="img" name="img" placeholder="Digite o link da imagem" value={formData.img || ''} onChange={handleChange} />
       </div>
 
       <div className={styles.inputContainer}>
         <label htmlFor="src">Video  </label>
         <input
           type="text" id="src" name="src"
-          value={formData.src}
+          value={formData.src || ''}
           onChange={handleChange}
           placeholder="Digite o link do video"
         />
@@ -128,7 +132,12 @@ const Form = (props, { onSubmit }) => {
 
       <div className={styles.inputContainer}>
         <label htmlFor="descricao">Descricao:</label>
-        <input type="text-area" id="descricao" name="descricao" placeholder="Digite a descricao" onChange={handleChange} />
+        {/* o codigo abaixo no input o value={formData.descricao || ''} define um controle para o input , 
+        ou tera o valor definnido no estado formData vindo como props  de outro componnente quando for atualizar registro
+          ou tera valor digita do pelo usuario, e ambus os valores seraão armazenados no formData e eviado para o seu destino*/}
+        <input type="text-area" id="descricao" name="descricao" placeholder="Digite a descricao"         
+        value={formData.descricao || ''} 
+        onChange={handleChange} />
       </div>
 
 

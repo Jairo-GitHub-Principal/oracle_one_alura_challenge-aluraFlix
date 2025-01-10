@@ -4,7 +4,7 @@ const HomeStyled = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     max-width:1442px;
      background-color: #000000;
     color: #ffffff;
@@ -20,7 +20,6 @@ const HomeStyled = styled.div`
  const HomeMainStyled = styled.main`
     display: flex;
     flex-direction: column;       
-    height: 100%;
     width: 100%;    
     max-width:1356px;  
     margin:40px;

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Anton&family=Archivo+Black&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Playwrite+AU+VIC+Guides&family=Playwrite+CO+Guides&family=Press+Start+2P&family=Sixtyfour:BLED,SCAN@0..100,-24&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 .form{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,6 +14,7 @@
     color: #ffffff;
     border: 5px solid  rgba(34, 113, 209, 1);
     border-radius: 15px 15px ;
+    padding: 20px;
 }
 
 label{
@@ -65,7 +67,7 @@ select{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 55px;   
+    height: 65px;   
     width: 100%; /* Define largura */
     max-width: 573px; /* Limita a largura máxima */
     border: 5px solid rgba(34, 113, 209, 1);
@@ -84,7 +86,7 @@ select{
   
   option{
     background-color: #000000;
-    width: 300px;
+    width: 100%;
     display: block;
     border: 3px solid  rgba(34, 113, 209, 1);
     border-radius: 15px 15px ;
