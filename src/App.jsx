@@ -54,6 +54,7 @@ function App() {
 
 
   return (
+    <VideoProvider>
     <BrowserRouter className="app" >
        {isModalOpen && ( /** isOpem = true ativa o modal , onClose = fecha o modal, videoEdit = video que vai ser editado, ele vai ser passado para o formulario */
           <ModalEdit isOpen={isModalOpen} onClose={handleCloseModal} videoEdit={editVideos} />
@@ -63,12 +64,12 @@ function App() {
           <NovoVideo isOpen={isModalOpenNovoVideo} onClose={handleCloseModal }  />
         )}
       <Container>
-       
+    
         <Header 
           criarCardVideo={criarCardVideo}
           handleCloseModal={handleCloseModal}
         />
-        <VideoProvider>
+        
           <Routes>
             <Route path="/" element={
               <Home
@@ -85,10 +86,12 @@ function App() {
             <Route path='/novovideo' element={<NovoVideo />} />
 
           </Routes>
-        </VideoProvider>
+        
         <Footer />
+      
       </Container>
     </BrowserRouter>
+    </VideoProvider>
   )
 }
 

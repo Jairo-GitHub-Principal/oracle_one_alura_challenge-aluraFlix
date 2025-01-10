@@ -11,12 +11,12 @@ export const VideosContext = createContext() // aqui foi criado o contexto com o
 
 export default function VideoProvider({children}){
 
-
+    const {getVideos} = useApi()
     const [video, setVideo] = useState([])
 
      
     useEffect(()=>{ /**  função getVideos que faz a requisicao get, carrega os videos no estado no context video */
-        useApi().getVideos(video, setVideo)
+        getVideos(video, setVideo)
      },[]) 
 
     

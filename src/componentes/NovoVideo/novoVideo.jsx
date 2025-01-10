@@ -1,9 +1,12 @@
 import style from "./novoVideo.module.css"
 import Form from "../ReusableComponent/FormComponent/form"
 import Text from "../ReusableComponent/TextComponent/text"
+import { useContext } from "react"
+import { VideosContext } from "../../componentes/Context/videoContext"
 
 
 const NovoVideo = ({ isOpen, onClose }) => {
+    const { video, setVideo } = useContext(VideosContext)
     if (!isOpen) {// quando isOpen for falso
         return null; //não exibe o modal
     } else {
@@ -22,11 +25,14 @@ const NovoVideo = ({ isOpen, onClose }) => {
 
                 <div className={style.novoVideoForm}>
                 <button className={style.modalclose} onClick={onClose}>Fechar</button>
+                    
                     <Form titulo="Criar Card de Video"
                         display="flex"
                         alignItems="center"
                         justifyContent="space-between"
                         padding="30px"
+                        video={video}
+                        setVideo={setVideo}
 
                     />
                 </div>

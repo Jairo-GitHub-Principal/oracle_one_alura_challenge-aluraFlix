@@ -1,11 +1,18 @@
-import { stringify } from "uuid";
+import { useContext, useEffect } from "react";
+import {VideosContext} from "../../Context/videoContext.jsx"
+
+
+
+
+export const atualizarLista =(video,setVideo)=> {
+    setVideo((prevSt) => [...prevSt,video]);
+   }
 
 export const useApi= () => {
-
-
    
 
-     function getVideos(video, setVideo) {
+ 
+        function getVideos(video, setVideo) {
             fetch("http://localhost:3000/videos")
                  .then((resposta) => resposta.json())
                  .then((resposta) => setVideo(resposta))
@@ -14,6 +21,12 @@ export const useApi= () => {
 
              console.log("UseEffect video", video);
        }
+
+
+
+        
+
+    
      
 
     //     const saveVideo = async (video,isUpdate = false) => {
@@ -54,7 +67,11 @@ export const useApi= () => {
 
     /** salvar video */
 
-    const saveVideo = async (video) => {
+           // Atualizar listagem apos add video
+
+         
+
+    const saveVideo = async (video, setVideo) => {
         console.log("Salvando novo vídeo");
         try {
             // Buscar vídeos existentes para pegar o último  ID registrado que tambem deve ser o id de maior valor
@@ -83,23 +100,32 @@ export const useApi= () => {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(video), // Envia os dados no corpo da requisição
-            });
+                   
+               
+
+            }); 
+            if(response.ok){
+                console.log("Video salvo com sucesso");
+                    getVideos(video, setVideo)
+
+            }
     
             if (!response.ok) {
                 throw new Error("Erro ao salvar o vídeo");
             }
-    
+
             return await response.json(); // Retorna o vídeo salvo
         } catch (error) {
             console.error("Erro:", error);
             throw error;
         }
+
     };
 
 
     /**atualizar um video existente */
 
-    const updateVideo = async (video) => {
+    const updateVideo = async (video,setVideo) => {
         console.log("Atualizando vídeo", video);
         console.log("Atualizando vídeo com ID:", video.id);
         const id = Number(video.id);
@@ -115,12 +141,20 @@ export const useApi= () => {
                 },
                 body: JSON.stringify(video), // Envia os dados no corpo da requisição
             });
+
+      
+                console.log("Video salvo com sucesso");
+                    getVideos(video, setVideo)
+
+            
     
             if (!response.ok) {
                 throw new Error("Erro ao atualizar o vídeo");
             }
     
             return await response.json(); // Retorna o vídeo atualizado
+            
+
         } catch (error) {
             console.error("Erro:", error);
             throw error;
@@ -129,6 +163,7 @@ export const useApi= () => {
 
 
     const deleteVideo = async (videoId) => {
+
         console.log("Deletando vídeo", videoId);
         if(typeof videoId === "string"){
             console.log(videoId," STRING");
@@ -147,8 +182,9 @@ export const useApi= () => {
                     "Content-Type": "application/json",
                 },
                 body:videoId,
+                
             });
-    
+            
             if (!response.ok) {
                 throw new Error("Erro ao deletar o vídeo");
             }
@@ -159,7 +195,12 @@ export const useApi= () => {
             console.error("Erro:", error);
             throw error;
         }
+
+
+
+
     };
+    
     
     
     

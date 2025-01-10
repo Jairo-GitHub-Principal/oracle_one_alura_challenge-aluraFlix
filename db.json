@@ -2,33 +2,51 @@
   "videos": [
     {
       "id": "1",
-      "src": "https://www.youtube.com/embed/ZY3-MFxVdEw?si=sofTDDxHR0JhF306",
-      "categoria": "Front End"
+      "titulo": "jairo",
+      "categoria": "Back End",
+      "src": "https://www.youtube.com/embed/fiPfvylj6rk?si=8OLBnCOJfzeTQvzp",
+      "descricao": "testando",
+      "img": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.alura.com.br%2Fartigos%2Fexperiencia-em-back-end-challenge-feito-pra-voce&psig=AOvVaw0tXK5EmzcWPfi2ewnbkg-3&ust=1736566432798000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNDMyZ2c6ooDFQAAAAAdAAAAABAE"
+    },
+    {
+      "id": "2",
+      "categoria": "Front End",
+      "src": " https://www.youtube.com/embed/fiPfvylj6rk?si=8OLBnCOJfzeTQvzp"
+    },
+    {
+      "id": "3",
+      "categoria": "Front End",
+      "src": "https://www.youtube.com/embed/wXMlMsDvk2M?si=hkjy4IzeOFM8Rx7h"
     },
     {
       "id": "4",
-      "src": "https://www.youtube.com/embed/fiPfvylj6rk?si=4_VS78gZpSaybqqX",
-      "categoria": "Back End"
+      "categoria": "Front End",
+      "src": "https://www.youtube.com/embed/xrRy3RI3HE4?si=PPCYItaED-mOAiw7"
     },
     {
       "id": "5",
-      "src": "https://www.youtube.com/embed/NpJVZtgSY4U?si=lX9_llxzTQqqcCqd",
-      "categoria": "Back End"
+      "categoria": "Back End",
+      "src": "https://www.youtube.com/embed/2z6f8VN_Pro?si=yS8XovruUUne5PT3"
     },
     {
-      "id": "7",
-      "src": "https://www.youtube.com/embed/FJhMCi07T4A?si=NfW_tBf9FI3lRCfI",
-      "categoria": "Mobile"
+      "id": "6",
+      "categoria": "Back End",
+      "src": "https://www.youtube.com/embed/fmu1LQvZhms?si=a5BrON5_Tp6VV1Xh"
     },
     {
-      "id": "7",
-      "categoria": "Front End",
-      "src": "https://www.youtube.com/embed/kBWeq10eNT8?si=kESSVtSDOMxYckWl"
-    },
-    {
-      "id": "9",
       "categoria": "Mobile",
-      "src": "https://www.youtube.com/embed/kBWeq10eNT8?si=kESSVtSDOMxYckWl"
+      "src": "https://www.youtube.com/embed/2z6f8VN_Pro?si=yS8XovruUUne5PT3",
+      "id": "10"
+    },
+    {
+      "categoria": "Mobile",
+      "src": "https://www.youtube.com/embed/fiPfvylj6rk?si=8OLBnCOJfzeTQvzp",
+      "id": "12"
+    },
+    {
+      "categoria": "Mobile",
+      "src": "https://www.youtube.com/embed/fmu1LQvZhms?si=a5BrON5_Tp6VV1Xh",
+      "id": "13"
     }
   ]
 }

@@ -2,19 +2,22 @@ import { CategoriaContainerStyled, CategoriaMovieContainerStyled } from "./categ
 // import { ButtonStyled } from "../ButtonComponent/styledButton.js";
 import Button from "../ButtonComponent/button.jsx";
 import Card from "../Card/card.jsx";
-import { useContext,  useState } from "react";
+import { useContext,  useEffect,  useState } from "react";
 import {VideosContext} from "../../Context/videoContext.jsx";
 import { v4 as uuidv4 } from 'uuid';
 
 
 
 
-
 const Categoria = ({edit}) => {
-    const {video} = useContext(VideosContext);
+    const {video, setVideo} = useContext(VideosContext);
     const [categoria, setCategoria] = useState(["Front End", "Back End", "Mobile"]); // usaremos context api
-   
-   
+  
+   const atualizarLista = (id)=>{
+        setVideo((prevSt)=>prevSt.filter((video)=>video.id !== id))
+   }
+
+       
    
     return (
         <>
@@ -38,6 +41,7 @@ const Categoria = ({edit}) => {
                                 categoria={video.categoria}
                                 id={video.id}
                                 edit={edit} // função que pega os video que sera editado
+                               atualizarLista={atualizarLista}
                             />
                         ))
                     }
