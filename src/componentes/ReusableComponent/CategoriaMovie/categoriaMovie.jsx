@@ -23,11 +23,14 @@ const Categoria = ({edit}) => {
         <>
             {categoria.map((categoria, id) => (
                 <CategoriaContainerStyled key={uuidv4()} >
+                   
                     <Button
                         $width="432px"
                         $height="70px"
                         $size="2.2rem"
                         $categoria={categoria}
+                        $buttonSamrtPhone="292px"
+                        
                     >
                         {categoria}
                     </Button>

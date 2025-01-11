@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const BannerStyled = styled.div`
 display: flex;
+flex-direction: column;
 justify-content: space-between;
 position:relative;
 width: ${(props) => props.$width || "100%"}; 
@@ -11,6 +12,24 @@ background-color: ${(props) => props.$overlayColor || "rgba(0, 0, 0, 0.7)"};
 background-blend-mode: multiply; /* Multiplica a imagem pela cor */
 background-size: cover;
 background-position: center;
+
+
+ @media(max-width:800px){
+    position: relative;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    height: 650px;
+    
+    
+   
+ }
+
+ @media(max-width:600px){
+    display:none
+ }
+
 
 `
 

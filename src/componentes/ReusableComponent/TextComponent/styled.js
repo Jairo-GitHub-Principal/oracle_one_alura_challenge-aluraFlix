@@ -12,6 +12,14 @@ const TextStyled = styled.p`
   font-family:${({$family}) => $family || "Arial"};
   text-justify:justify;
   /* border: solid 1px red; */
+
+
+
+  @media (max-width: 1100px) {
+    font-size:${({$tabletFont}) => $tabletFont || "14px"};
+  }
+
+ 
  
 `
 

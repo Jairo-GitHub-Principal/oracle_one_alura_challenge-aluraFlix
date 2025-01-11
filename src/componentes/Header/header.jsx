@@ -14,13 +14,14 @@ const Header = (props) => {
     return (
         <>
             <HeaderStyled>
-                <Link to="/" style={{ textDecoration: "none", color: "white" }}><h1>
-                <Image maxWidth="168px" height="40px" src={imgLogo} alt="Logo AluraFlix" />
+                    <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+                        <Image maxWidth="168px" height="40px" src={imgLogo} alt="Logo AluraFlix" />
 
-                    </h1></Link>
-
+                    </Link>
+                
                 <NavContainer>
                     <Button
+                        $fontTablet="1.5rem"
                         $width="180px"
                         $height="54px"
                         $size="16px"
@@ -33,6 +34,7 @@ const Header = (props) => {
 
                     <Button
                         $size="25px"
+                        $fontTablet="1.5rem"  
                         $width="180px"
                         $height="54px"
                         $weight="bold"

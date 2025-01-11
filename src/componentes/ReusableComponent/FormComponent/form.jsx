@@ -90,7 +90,7 @@ const Form = (props, { onSubmit }) => {
 
       <div className={styles.inputContainer}>
         <label htmlFor="titulo">Titulo:</label>
-        <input type="text" id="titulo" name="titulo" placeholder="Digite o titulo" value={formData.titulo || ''} onChange={handleChange} />
+        <input type="text" id="titulo" name="titulo" placeholder="titulo" value={formData.titulo || ''} onChange={handleChange} />
       </div>
 
       <div className={styles.inputContainer}>
@@ -115,7 +115,7 @@ const Form = (props, { onSubmit }) => {
 
       <div className={styles.inputContainer}>
         <label htmlFor="img">Imagem  </label>
-        <input type="text" id="img" name="img" placeholder="Digite o link da imagem" value={formData.img || ''} onChange={handleChange} />
+        <input type="text" id="img" name="img" placeholder="imagem" value={formData.img || ''} onChange={handleChange} />
       </div>
 
       <div className={styles.inputContainer}>
@@ -124,7 +124,7 @@ const Form = (props, { onSubmit }) => {
           type="text" id="src" name="src"
           value={formData.src || ''}
           onChange={handleChange}
-          placeholder="Digite o link do video"
+          placeholder="video"
         />
       </div>
 
@@ -135,7 +135,7 @@ const Form = (props, { onSubmit }) => {
         {/* o codigo abaixo no input o value={formData.descricao || ''} define um controle para o input , 
         ou tera o valor definnido no estado formData vindo como props  de outro componnente quando for atualizar registro
           ou tera valor digita do pelo usuario, e ambus os valores seraão armazenados no formData e eviado para o seu destino*/}
-        <input type="text-area" id="descricao" name="descricao" placeholder="Digite a descricao"         
+        <input type="text-area" id="descricao" name="descricao" placeholder="descricao"         
         value={formData.descricao || ''} 
         onChange={handleChange} />
       </div>

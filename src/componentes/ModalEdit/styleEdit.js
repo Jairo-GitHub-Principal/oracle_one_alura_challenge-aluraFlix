@@ -4,7 +4,7 @@ const OverLay = styled.div`
    position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background: rgba(0, 0, 0, 0.9);
     display: flex;
@@ -37,6 +37,11 @@ background: #070000;
   position: relative;
   box-sizing: border-box;
   padding: 60px 30px;
+
+  @media(max-width:420px){
+      height: 100vh;
+      width: 100%;
+  }
 
   `
 

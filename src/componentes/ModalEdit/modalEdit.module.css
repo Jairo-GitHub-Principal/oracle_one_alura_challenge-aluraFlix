@@ -95,4 +95,24 @@
     
 }
 
+
+@media(max-width:420px){
+  .modalclose {
+    position: absolute;
+    top: 75px;
+    right: 40px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    transition: border-color 0.3s ease;
+    font-size: 20px;
+    z-index: 1000;
+
+   
+    
+
+  }
+}
   

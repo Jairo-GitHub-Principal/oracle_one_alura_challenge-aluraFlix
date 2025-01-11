@@ -11,6 +11,8 @@ const Banner = (props) => {
             $height={props.height}
             $backgroundImage={props.backgroundImage}>
 
+               
+
             <article className={style.textBannerContainer}>
                 <Button
                     border="none"
@@ -19,38 +21,47 @@ const Banner = (props) => {
                     $size="3.2rem"
                     $weight="600"
                     $categoria="Front End"
-                    
-                    
+                    $fontTablet="2rem"
+                    $alignSelf="start"  
+                   
+
+
                 >
                     Frontend
                 </Button>
-                <Text size="46px"
+                <Text
+
+                    size="46px"
                     weight="normal"
                     color="white"
                     width="100%"
                     margin="0"
-                    >
+                    tabletFont="26px"
+                    smartPhoneFont="20px"
+                >
                     SEO com React
                 </Text>
-
-                <Text size="18px"
-                    weight="normal"
-                    color="white"
-                    width="100%"
-                    maxWidth="662px"
-                    lineHeight="25px"
-                    textAline="left"
-                    margin="0"
+                <div style={{ display: "flex", width:"90%" }}>
+                    <Text size="18px"
+                        weight="normal"
+                        color="white"
+                        width="100%"
+                        maxWidth="662px"
+                        lineHeight="25px"
+                        textAline="left"
+                        margin="0"
 
                     >
                     Eu to aqui pra nesse vídeo dizer que a gente vai aprender a começar uma app inspirada no desenho Pokémon com Nextjs e React, ver algumas dicas sobre performance e de quebra conhecer uma plataforma sensacional pra fazer deploy que é a Vercel. Tudo em 22 minutos nesse vídeo feito com todo o carinho do mundo construindo uma ">
-                    Aprenda a otimizar seus sites com React
-                </Text>
+                        Aprenda a otimizar seus sites com React
+                    </Text>
+                </div>
+
             </article>
             <div className={style.videoContainer}>
-               
-                    <img className={style.video}   src={imgVideo} alt="Video" />
-                
+
+                <img className={style.video} src={imgVideo} alt="Video" />
+
             </div>
         </BannerStyled >
     )

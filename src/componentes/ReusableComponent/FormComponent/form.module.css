@@ -190,9 +190,13 @@ select{
     
 }
 
-@media (max-width: 400px) {
+@media (max-width: 420px) {
     
-   .form{width: 100%; }
+   .form{width: 100%;
+    height:650px;
+}   h1{
+        font-size: 25px;
+}
     label{
         display: none;
     }
@@ -202,6 +206,7 @@ select{
     }
     .btn{
         width: 45%;
+        font-size: 20px;
 
     }
 

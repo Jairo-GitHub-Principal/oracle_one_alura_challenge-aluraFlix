@@ -3,6 +3,8 @@ import Button from "../ButtonComponent/button.jsx";
 import { MdDelete } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
 import { FaExpand } from "react-icons/fa";
+import { FaRegCirclePlay } from "react-icons/fa6";
+
 import { Link } from "react-router-dom";
 import {useApi}  from "../../Hooks/fetchApi/useApi.js"
 
@@ -22,6 +24,10 @@ const Card = ({ edit, id,titulo, categoria,img,src,descricao,atualizarLista }) =
         const videoData = {id,titulo, categoria,img, src,descricao };
         edit(videoData); // Passa os dados do vídeo para o método edit
     };
+
+    const play = (event) => {
+        console.log("play");
+    }
    
     const handleDeleteClick =  () => {
        // Passa o ID do vídeo para o método deleteVideo
@@ -41,14 +47,13 @@ const Card = ({ edit, id,titulo, categoria,img,src,descricao,atualizarLista }) =
     return (
         <CardContainerStyled $categoria={categoria} >
                               
-
-            <iframe
+             <img style={{borderRadius:"10px"}} width={"100%"} height={"85%"} src={img} alt={titulo} />
+            {/* <iframe
                 width="100%"
                 height="100%"
-                controls
                 src={src}
                 allowFullScreen
-            />
+            /> */}
             <CardContainerButtonStyled>
                 
                 
@@ -57,11 +62,11 @@ const Card = ({ edit, id,titulo, categoria,img,src,descricao,atualizarLista }) =
                 </Button>
                 
                 
-                <Button $size={"1.5rem"}>
+                <Button $size={"1.5rem"} click={play}>
                     <Link style={{ textDecoration: "none", color: "white" }}
                         to={`/${id}`}
                     >
-                    <FaExpand />
+                   <FaRegCirclePlay  size={"30px"}/>
                     </Link>
                    
                 </Button>

@@ -12,6 +12,15 @@ const HeaderStyled = styled.header`
     align-items: center;
     padding:  0;
 
+    @media(max-width:800px){
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding:  0;
+        gap: 0px;
+        
+    }   
+
 
 `;
 
@@ -30,6 +39,13 @@ const NavContainer = styled.nav`
     align-items: center;
     margin:35px 51px;
 
+    @media(max-width:800px){
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        gap: 30px;
+        
+    }
     
 `;
 

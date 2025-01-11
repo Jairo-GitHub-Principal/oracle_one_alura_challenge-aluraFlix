@@ -1,6 +1,6 @@
 import { TextStyled, TextContainerStyled } from "./styled";
 
-const Text = ({children,size,weight,color,margin,padding,lineHeight,width,maxWidth,height,textAline,family}) => {
+const Text = ({tabletFont,smartPhoneFont,children,size,weight,color,margin,padding,lineHeight,width,maxWidth,height,textAline,family}) => {
   return (
     <>
     <TextContainerStyled $width={width} $maxWidth= {maxWidth} $height={height}  >
@@ -15,7 +15,10 @@ const Text = ({children,size,weight,color,margin,padding,lineHeight,width,maxWid
        $width={width}
        $maxWidth= {maxWidth}
        $family={family}
-       
+       $tabletFont={tabletFont}
+       $smartPhoneFont={smartPhoneFont}
+
+            
        
        >
         {children}

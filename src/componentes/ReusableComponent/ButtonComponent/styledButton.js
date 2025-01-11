@@ -4,6 +4,7 @@ const ButtonStyled = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
+    align-self:${({$alignSelf}) => $alignSelf||"start" };
     font-weight: ${({ $weight }) => $weight || "normal"};
     font-size: ${({ $size }) => $size || "2rem"};
     width: ${({ $width }) => $width || "100px"};
@@ -57,6 +58,18 @@ const ButtonStyled = styled.button`
 &:active {
     transform: scale(0.95); /* Reduz o tamanho para 95% */
     /* background-color : rgba(75,0,130, 0.7); */
+}
+
+
+@media(max-width:800px){
+    font-size: ${({ $fontTablet }) => $fontTablet || "2rem"};
+    align-self:${({$alignSelf}) => $alignSelf||"center" };
+
+
+}
+@media(max-width:420px){
+    width:${({$buttonSamrtPhone})=>$buttonSamrtPhone||""};
+
 }
 
 `
