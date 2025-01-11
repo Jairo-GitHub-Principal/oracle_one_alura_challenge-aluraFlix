@@ -11,6 +11,7 @@ Uma plataforma inspirada na Netflix, projetada para apresentar vídeos dos curso
   - **Novo Vídeo**: Leva o usuário ao formulário para adicionar um novo vídeo.
 - **Responsividade**:
   - **Modo Desktop**: Logo alinhado à esquerda, botões alinhados à direita.
+  - ![Texto Alternativo](https://github.com/Jairo-GitHub-Principal/oracle_one_alura_challenge-aluraFlix/blob/master/imgGithub/headerDesktop.jpg?raw=true)
   - **Modo tablet (abaixo de 820px)**: Logo centralizado no topo, botões exibidos abaixo do logo, alinhados à esquerda (**Home**) e à direita (**Novo Vídeo**).
    - **Modo smartphone (abaixo de 420px)**: Logo centralizado no topo, botões exibidos abaixo do logo, alinhados  um em baixo do outro (verticalmente) (**Home**) em cima (**Novo Vídeo**) em baixo.
 
