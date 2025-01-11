@@ -35,15 +35,23 @@ const CardContainerStyled = styled.div`
 
 @media(max-width:1000px){
         width: 80%;
-}
+        
+
+@media(max-width:420px){
+    min-width: 100%;
+}}
+
+
+
+
 `
 
 
 const  CardContainerButtonStyled = styled.div`
     display: flex;
      align-items: center;
-    justify-content: center;
-    gap: 70px;
+    justify-content: space-between;
+    box-sizing: border-box;
     width: 100%;
     background-color: #000000;
     color: #ffffff;
@@ -56,7 +64,7 @@ const  CardContainerButtonStyled = styled.div`
     bottom: 0;
     left: 0;
     right: 0;
-    border: none;
+    border-top: 1px solid rgba(107, 209, 255, 1);
    
 
     

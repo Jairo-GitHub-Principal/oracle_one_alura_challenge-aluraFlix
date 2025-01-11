@@ -13,7 +13,7 @@ const CategoriaContainerStyled = styled.div` // vai conter o titulo da categoria
     margin-bottom: 90px;
     background-color: #000000;
     color: #ffffff;
-    padding:  0;
+    padding: 0 30px;
 
     @media(max-width:880px){
        align-items: center;
@@ -29,14 +29,13 @@ const CategoriaMovieContainerStyled = styled.section` // vai  conter apenas  o c
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    gap: 10px;
+    gap: 20px;
     width: 100%;
     overflow-x:auto;
-   
     opacity: 0px;
     box-sizing: border-box;
     margin-top: 40px;
-
+    box-sizing: border-box;
     // personalizar o scrollbar 
    
      /* Personalização da barra de rolagem para Chrome, Edge e Safari */

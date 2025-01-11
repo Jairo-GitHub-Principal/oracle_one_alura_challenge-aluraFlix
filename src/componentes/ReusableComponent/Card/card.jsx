@@ -47,7 +47,7 @@ const Card = ({ edit, id,titulo, categoria,img,src,descricao,atualizarLista }) =
     return (
         <CardContainerStyled $categoria={categoria} >
                               
-             <img style={{borderRadius:"10px"}} width={"100%"} height={"85%"} src={img} alt={titulo} />
+             <img style={{borderRadius:"10px"}} width={"100%"} height={"100%"} src={img} alt={titulo} />
             {/* <iframe
                 width="100%"
                 height="100%"
