@@ -60,7 +60,7 @@ const ButtonStyled = styled.button`
     /* background-color : rgba(75,0,130, 0.7); */
 }
 @media(max-width:1030px){
-    font-size: ${({ $fontDesktop }) => $fontDesktop || "2rem"};
+    font-size: ${({ $fontTablet }) => $fontTablet || "2rem"};
 }
 
 @media(max-width:820px){
