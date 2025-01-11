@@ -13,14 +13,16 @@ background-blend-mode: multiply; /* Multiplica a imagem pela cor */
 background-size: cover;
 background-position: center;
 
-
- @media(max-width:800px){
+ @media(max-width:820px){
     position: relative;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position:relative;
     height: 650px;
+    width: 100%;
+    box-sizing: border-box;
+
     
     
    

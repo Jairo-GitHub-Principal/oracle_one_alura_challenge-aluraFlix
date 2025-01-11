@@ -23,6 +23,7 @@ const Banner = (props) => {
                     $categoria="Front End"
                     $fontTablet="2rem"
                     $alignSelf="start"  
+                    $padding="5px"
                    
 
 

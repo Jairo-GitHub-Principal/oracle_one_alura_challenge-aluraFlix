@@ -59,9 +59,11 @@ const ButtonStyled = styled.button`
     transform: scale(0.95); /* Reduz o tamanho para 95% */
     /* background-color : rgba(75,0,130, 0.7); */
 }
+@media(max-width:1030px){
+    font-size: ${({ $fontDesktop }) => $fontDesktop || "2rem"};
+}
 
-
-@media(max-width:800px){
+@media(max-width:820px){
     font-size: ${({ $fontTablet }) => $fontTablet || "2rem"};
     align-self:${({$alignSelf}) => $alignSelf||"center" };
 

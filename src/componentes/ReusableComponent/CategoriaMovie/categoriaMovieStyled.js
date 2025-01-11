@@ -27,18 +27,17 @@ const CategoriaContainerStyled = styled.div` // vai conter o titulo da categoria
 
 const CategoriaMovieContainerStyled = styled.section` // vai  conter apenas  o container de videos
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: flex-start;
     gap: 10px;
     width: 100%;
-    max-width:356.39px;
+    overflow-x: scroll;
+   
     opacity: 0px;
     box-sizing: border-box;
     margin-top: 40px;
         
-    @media(max-width:880px){
-       justify-content: center;
-    } 
+   
 
     @media (max-width: 420px) {
         flex-direction: row;
@@ -47,10 +46,7 @@ const CategoriaMovieContainerStyled = styled.section` // vai  conter apenas  o c
         gap: 10px; /* Espaçamento entre os itens */
         padding: 10px; /* Espaçamento interno */
         justify-content: flex-start;
-        /* Opcional: remover borda para melhorar o layout */
-        
-    
-    
+        /* Opcional: remover borda para melhorar o layout */       
     }
     
     `

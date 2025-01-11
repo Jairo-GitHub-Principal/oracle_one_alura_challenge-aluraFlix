@@ -45,10 +45,7 @@ const Header = (props) => {
 
                     >Novo Videos
 
-                        {/* <Link style={{textDecoration:"none", color:"white",fontSize:"25px"}}  to="/novoVideo">
-                    Novo Videos
-                    </Link> */}
-
+                       
                     </Button>
                 </NavContainer>
 

@@ -40,11 +40,15 @@ const NavContainer = styled.nav`
     margin:35px 51px;
 
     @media(max-width:800px){
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         height: 100%;
-        gap: 30px;
+        gap: 50px;
         
+    }
+    @media(max-width:450px){
+        flex-direction: column;
+      
     }
     
 `;
