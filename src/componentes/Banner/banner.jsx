@@ -53,7 +53,7 @@ const Banner = (props) => {
                         margin="0"
 
                     >
-                    Eu to aqui pra nesse vídeo dizer que a gente vai aprender a começar uma app inspirada no desenho Pokémon com Nextjs e React, ver algumas dicas sobre performance e de quebra conhecer uma plataforma sensacional pra fazer deploy que é a Vercel. Tudo em 22 minutos nesse vídeo feito com todo o carinho do mundo construindo uma ">
+                    Eu to aqui nesse vídeo pra dizer que a gente vai aprender fazer um app com Nextjs e React, inspirado no desenho Pokémon, vamos ver algumas dicas sobre performance e de quebra conhecer uma plataforma sensacional pra fazer deploy que é a Vercel. Tudo em 22 minutos nesse vídeo feito com todo o carinho do mundo. 
                         Aprenda a otimizar seus sites com React
                     </Text>
                 </div>
