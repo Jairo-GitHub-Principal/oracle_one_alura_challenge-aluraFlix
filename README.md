@@ -11,14 +11,16 @@ Uma plataforma inspirada na Netflix, projetada para apresentar vídeos dos curso
   - **Novo Vídeo**: Leva o usuário ao formulário para adicionar um novo vídeo.
 - **Responsividade**:
   - **Modo Desktop**: Logo alinhado à esquerda, botões alinhados à direita.
-    <div>
+<div align="center">
   <img src="https://github.com/Jairo-GitHub-Principal/oracle_one_alura_challenge-aluraFlix/blob/master/imgGithub/headerDesktop.jpg?raw=true"/>
 </div>
   - ![Texto Alternativo]()
   - **Modo tablet (abaixo de 820px)**: Logo centralizado no topo, botões exibidos abaixo do logo, alinhados à esquerda (**Home**) e à direita (**Novo Vídeo**).
-   -![](https://github.com/Jairo-GitHub-Principal/oracle_one_alura_challenge-aluraFlix/blob/master/imgGithub/headerTablet.jpg?raw=true)
+  <div align="center">
+    <img src="https://github.com/Jairo-GitHub-Principal/oracle_one_alura_challenge-aluraFlix/blob/master/imgGithub/headerTablet.jpg?raw=true"/>
+  </div>
    - **Modo smartphone (abaixo de 420px)**: Logo centralizado no topo, botões exibidos abaixo do logo, alinhados  um em baixo do outro (verticalmente) (**Home**) em cima (**Novo Vídeo**) em baixo.
-<div>
+<div align="center">
   <img src="https://github.com/Jairo-GitHub-Principal/oracle_one_alura_challenge-aluraFlix/blob/master/imgGithub/headerSmartphone.jpg?raw=true"/>
 </div>
 
@@ -28,9 +30,13 @@ Uma plataforma inspirada na Netflix, projetada para apresentar vídeos dos curso
   - Imagem relacionada ao tutor do curso.
 - **Responsividade**:
   - **Modo Desktop**: Texto e imagem alinhados horizontalmente.
-   -![](https://github.com/Jairo-GitHub-Principal/oracle_one_alura_challenge-aluraFlix/blob/master/imgGithub/bannerDesktop.jpg?raw=true)
+    <div align="center">
+  <img src="https://github.com/Jairo-GitHub-Principal/oracle_one_alura_challenge-aluraFlix/blob/master/imgGithub/bannerDesktop.jpg?raw=true"/>
+</div>
   - **Modo Tablete (abaixo de 820px)**: Elementos texto e imagem alinhados verticalmente.
-   -![](https://github.com/Jairo-GitHub-Principal/oracle_one_alura_challenge-aluraFlix/blob/master/imgGithub/bannerTablet.jpg?raw=true)
+   <div align="center">
+  <img src="https://github.com/Jairo-GitHub-Principal/oracle_one_alura_challenge-aluraFlix/blob/master/imgGithub/bannerTablet.jpg?raw=true"/>
+</div>
   - **Modo smartphone (abaixo de 420px)**: Elementos removidos para otimizar o layout.
 
 ### Categorias de Cursos
@@ -46,11 +52,17 @@ Uma plataforma inspirada na Netflix, projetada para apresentar vídeos dos curso
     - **Editar**: Leva ao formulário para editar o vídeo.
 - **Responsividade**:
   - **Modo Desktop**: Exibe até 3 cards alinhados  horizontal com scroll  para navegar pelos demais cards da lista horizontal.
-   -![](https://github.com/Jairo-GitHub-Principal/oracle_one_alura_challenge-aluraFlix/blob/master/imgGithub/cardsDesktop.jpg?raw=true)
+     <div align="center">
+  <img src="https://github.com/Jairo-GitHub-Principal/oracle_one_alura_challenge-aluraFlix/blob/master/imgGithub/cardsDesktop.jpg?raw=true"/>
+</div>
   - **Modo Tablet (abaixo de 820px)**: Exibe até 2 cards com scroll  para navegar pelos demais cards da lista horizontal.
-   -![](https://github.com/Jairo-GitHub-Principal/oracle_one_alura_challenge-aluraFlix/blob/master/imgGithub/cardsTablet.jpg?raw=true)
+    <div align="center">
+  <img src="https://github.com/Jairo-GitHub-Principal/oracle_one_alura_challenge-aluraFlix/blob/master/imgGithub/cardsTablet.jpg?raw=true"/>
+</div>
   - **Modo Mobile (abaixo de 420px)**: Exibe 1 card por vez com scroll horizontal Exibe até 2 cards com scroll  para navegar pelos demais cards da lista horizontal.
-   -![](https://github.com/Jairo-GitHub-Principal/oracle_one_alura_challenge-aluraFlix/blob/master/imgGithub/cardsSmartphone.jpg?raw=true)
+     <div align="center">
+  <img src="https://github.com/Jairo-GitHub-Principal/oracle_one_alura_challenge-aluraFlix/blob/master/imgGithub/cardsSmartphone.jpg?raw=true"/>
+</div>
 
     -**Formularios para add e editar video.
    -![](https://github.com/Jairo-GitHub-Principal/oracle_one_alura_challenge-aluraFlix/blob/master/imgGithub/addvideo.jpg?raw=true)
