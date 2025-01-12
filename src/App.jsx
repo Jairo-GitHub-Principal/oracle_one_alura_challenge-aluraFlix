@@ -16,13 +16,9 @@ function App() {
   const [editVideos, setEditVideos] = useState([null]);
   const [isModalOpen, setIsModalOpen] = useState(false); // Estado que controla a visibilidade do modal
   const [isModalOpenNovoVideo, setIsModalOpenNovoVideo] = useState(false);
-  // console.log("App editVideos apos declarar", editVideos);
+ 
 
-  // useEffect(() => {
-  //   if (editVideos) {
-  //     // console.log("UseEffect editVideos", editVideos);
-  //   }
-  // }, [editVideos])
+  
 
 
 

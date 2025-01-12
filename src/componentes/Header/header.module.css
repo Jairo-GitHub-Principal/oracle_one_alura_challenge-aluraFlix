@@ -16,9 +16,12 @@
         align-items: center;
         top: 9px;
         left: 15px;
-         
         color: #ffffff;
         border: none;
+        border-radius: 30px;
+        background: none;
+        cursor: pointer;
+        outline:none;
 
     }
 

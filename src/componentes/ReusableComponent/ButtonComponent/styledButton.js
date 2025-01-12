@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const ButtonStyled = styled.button`
 position: relative;
+    outline: none;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,12 +55,13 @@ position: relative;
     text-decoration-skip-ink: none;
 
      /* Adicionar animação */
-     transition: transform 0.2s ease;
+     transition: transform 0.1s ease;
 
 &:active {
-    transform: scale(0.95); /* Reduz o tamanho para 95% */
-    /* background-color : rgba(75,0,130, 0.7); */
+    transform: scale(0.85); /* Reduz o tamanho para 95% */
+   
 }
+
 @media(max-width:1030px){
     font-size: ${({ $fontTablet }) => $fontTablet || "2rem"};
 }
@@ -76,8 +78,7 @@ position: relative;
     border-radius:30px; 
     padding-left:40px;
     display: ${({ $hide }) => ($hide ? 'none' : 'flex')};
-
-    $hide
+    
 
 
 }

@@ -21,11 +21,11 @@ const Button = ({ children, $padding, $size, $border, $width, $height, $weight,$
             console.warn("A prop `click` não é uma função válida.");
         }
         
-        setIsActive(!isActive);
+        setIsActive(!!isActive);
+      
     };
     return (
         <ButtonStyled
-            $isActive={isActive}
             $size={$size}
             $width={$width}
             $height={$height} 

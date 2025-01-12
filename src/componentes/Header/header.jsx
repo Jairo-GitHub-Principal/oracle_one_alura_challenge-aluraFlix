@@ -36,7 +36,7 @@ const Header = (props) => {
                         $backgroundColor="#000000"
                         buttonSamrtPhone="134px"
                         paddingSamrtPhone="5px"
-                    ><Link to="/" style={{ textDecoration: "none", color: "white", fontSize: "25px" }}  >
+                    ><Link to="/" style={{ textDecoration: "none", color: "white", fontSize: "25px", borderRadius: "30px",outline:"none" }}  >
                        <GoHome size={30} className={styles.buttonHomeMobile} /> 
                        Home</Link></Button>
 
