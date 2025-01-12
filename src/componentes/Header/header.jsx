@@ -1,8 +1,13 @@
+import styles from "./header.module.css"
 import { HeaderStyled, NavContainer } from "./styled"
 import Image from "../ReusableComponent/ImageComponent/img.jsx"
 import Button from "../ReusableComponent/ButtonComponent/button.jsx"
 import imgLogo from "../../assets/img/logo/logoAluraFlix.png"
 import { Link } from "react-router-dom"
+import { GoHome } from "react-icons/go";
+import { BiPlusCircle } from "react-icons/bi";
+
+
 const Header = (props) => {
 
     const handleClick = () => {
@@ -29,7 +34,11 @@ const Header = (props) => {
                         $color="rgba(34, 113, 209, 1)"
                         $border="rgba(34, 113, 209, 1)"
                         $backgroundColor="#000000"
-                    ><Link to="/" style={{ textDecoration: "none", color: "white", fontSize: "25px" }}  >Home</Link></Button>
+                        buttonSamrtPhone="134px"
+                        paddingSamrtPhone="5px"
+                    ><Link to="/" style={{ textDecoration: "none", color: "white", fontSize: "25px" }}  >
+                       <GoHome size={30} className={styles.buttonHomeMobile} /> 
+                       Home</Link></Button>
 
 
                     <Button
@@ -41,12 +50,20 @@ const Header = (props) => {
                         $color="rgba(255, 255, 255, 1)"
                         $border="rgba(255, 255, 255, 1)"
                         $backgroundColor="#000000"
+                        $hide="true"
+                        
                         click={handleClick}
 
-                    >Novo Videos
+                    >
+                        
+                        Novo Videos
 
                        
                     </Button>
+                    <div >
+                    <BiPlusCircle size={60}className={styles.novoVideoMobile}  onClick={handleClick} />
+                    </div>
+                   
                 </NavContainer>
 
             </HeaderStyled>

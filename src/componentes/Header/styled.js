@@ -21,6 +21,15 @@ const HeaderStyled = styled.header`
         
     }   
 
+    @media(max-width:450px){
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+       
+    }
+
 
 `;
 
@@ -47,7 +56,7 @@ const NavContainer = styled.nav`
         
     }
     @media(max-width:450px){
-        flex-direction: column;
+       
       
     }
     

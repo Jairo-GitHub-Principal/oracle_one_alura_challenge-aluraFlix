@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const ButtonStyled = styled.button`
+position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,10 +70,18 @@ const ButtonStyled = styled.button`
 
 
 }
-@media(max-width:420px){
-    width:${({$buttonSamrtPhone})=>$buttonSamrtPhone||""};
+@media(max-width:450px){
+    width:${({$buttonSamrtPhone})=>$buttonSamrtPhone||"154px"};
+    padding:${({$paddingSamrtPhone})=>$paddingSamrtPhone||"5px"};
+    border-radius:30px; 
+    padding-left:40px;
+    display: ${({ $hide }) => ($hide ? 'none' : 'flex')};
+
+    $hide
+
 
 }
+
 
 `
 

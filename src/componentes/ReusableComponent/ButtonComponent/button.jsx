@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'; // fazer validação de props
 
 
 // eslint-disable-next-line react/prop-types
-const Button = ({ children, $padding, $size, $border, $width, $height, $weight,$categoria,click,$fontTablet,$alignSelf,$buttonSamrtPhone  }) => {
+const Button = ({ children, $padding, $size, $border, $width, $height, $weight,$categoria,click,$fontTablet,$alignSelf,$buttonSamrtPhone,$paddingSamrtPhone,$hide}) => {
     // console.log("Button",$categoria);
 
     const [isActive, setIsActive] = useState(false);
@@ -36,7 +36,9 @@ const Button = ({ children, $padding, $size, $border, $width, $height, $weight,$
             $fontTablet = {$fontTablet}
             $alignSelf = {$alignSelf}
             $buttonSamrtPhone = {$buttonSamrtPhone}
+            paddingSamrtPhone = {$paddingSamrtPhone}
             $padding = {$padding}
+            $hide = {$hide}
 
             >
             {children}

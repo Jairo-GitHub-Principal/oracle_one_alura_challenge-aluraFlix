@@ -7,6 +7,10 @@ const ImageStyled = styled.img`
     background: rgba(0, 0, 0, 0.1);    /* border: 1px solid red; */
     margin:42px 51px;
     box-sizing: border-box;
+
+    @media(max-width:450px){
+            display: none;
+    } 
 `
 
 const Image = (props) => {
