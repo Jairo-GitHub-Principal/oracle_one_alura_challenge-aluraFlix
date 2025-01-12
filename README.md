@@ -19,7 +19,7 @@ Uma plataforma inspirada na Netflix, projetada para apresentar vídeos dos curso
   <div align="center">
     <img src="https://github.com/Jairo-GitHub-Principal/oracle_one_alura_challenge-aluraFlix/blob/master/imgGithub/headerTablet.jpg?raw=true"/>
   </div>
-   - **Modo smartphone (abaixo de 420px)**: Logo centralizado no topo, botões exibidos abaixo do logo, alinhados  um em baixo do outro (verticalmente) (**Home**) em cima (**Novo Vídeo**) em baixo.
+   - **Modo smartphone (abaixo de 420px)**: Logo some, botões exibidos no radapé, alinhados  um ao lado do outro (horizontalmente) o botão novo video, é modificado para um sinal de soma, indicando uma adição  e o home passa a ter um icone "home".
 <div align="center">
   <img src="https://github.com/Jairo-GitHub-Principal/oracle_one_alura_challenge-aluraFlix/blob/master/imgGithub/buttonMobileoficial.jpg?raw=true"/>
 </div>
