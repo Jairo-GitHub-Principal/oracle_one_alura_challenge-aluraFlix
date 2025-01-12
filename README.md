@@ -50,7 +50,7 @@ Uma plataforma inspirada na Netflix, projetada para apresentar vídeos dos curso
     - **Excluir**: Remove o card.
     - **Play**: Abre o vídeo em uma tela de visualização.
     - **Editar**: Leva ao formulário para editar o vídeo.
-- **Responsividade**:
+- **Responsividade** :
   - **Modo Desktop**: Exibe até 3 cards alinhados  horizontal com scroll  para navegar pelos demais cards da lista horizontal.
      <div align="center">
   <img src="https://github.com/Jairo-GitHub-Principal/oracle_one_alura_challenge-aluraFlix/blob/master/imgGithub/cardsDesktop.jpg?raw=true"/>
