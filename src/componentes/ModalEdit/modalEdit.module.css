@@ -116,3 +116,20 @@
   }
 }
   
+
+@media screen and (orientation: landscape) and (max-height: 450px) {
+  .modalclose {
+    
+    position: fixed;
+    top: 10px;
+    margin: 2px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    transition: border-color 0.3s ease;
+    font-size: 20px;
+    z-index: 1000;
+}
+}

@@ -81,7 +81,7 @@ const Form = (props, { onSubmit }) => {
 
   return (
 
-    <>
+    <div className={styles.formContainer}>
     
     <form className={styles.form}  >
       <h1 >
@@ -151,7 +151,7 @@ const Form = (props, { onSubmit }) => {
 
 
     </form>
-    </>
+    </div>
   );
 }
 
