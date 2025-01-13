@@ -10,21 +10,24 @@ import VideoProvider from './componentes/Context/videoContext.jsx';
 import Player from './componentes/Player/player.jsx';
 import ModalEdit from './componentes/ModalEdit/edit.jsx';
 import NovoVideo from './componentes/NovoVideo/novoVideo.jsx';
+import ModalVideo from './componentes/ModalVideo/modalVideo.jsx';
 import { useEffect, useState } from 'react';
 
 function App() {
   const [editVideos, setEditVideos] = useState([null]);
   const [isModalOpen, setIsModalOpen] = useState(false); // Estado que controla a visibilidade do modal
   const [isModalOpenNovoVideo, setIsModalOpenNovoVideo] = useState(false);
- 
+  const [isModalVideoOpen, setIsModalVideo] = useState(false);
+  const [idPlay, setIdPlay] = useState(null);
 
-  
+
+
 
 
 
 
   const handleEdit = (video) => {
-      // essa função vai decer até chegar no card, e la vai ser chamada, e pra ela vai ser  passado os video do card de video que sera editado
+    // essa função vai decer até chegar no card, e la vai ser chamada, e pra ela vai ser  passado os video do card de video que sera editado
     // console.log("APP Edit chegou", video);
     setEditVideos(video); // os video do card que serra editado agora vai ser passado para  o modal e do modal para o formulario
     setIsModalOpen(true); // ativa a abertura do modal
@@ -32,16 +35,24 @@ function App() {
     // console.log("HOMEVideo para editar: ", video);
   };
 
-  const criarCardVideo = () => { 
-   
+  const criarCardVideo = () => {
+
     // console.log("CriarCardVideo chegou no APP");
-    setIsModalOpenNovoVideo(true); 
+    setIsModalOpenNovoVideo(true);
+  };
+
+  
+  const playVideo = (id) => {
+   
+    setIsModalVideo(true);
+    setIdPlay(id);
   };
 
   const handleCloseModal = () => { // fechar o modal
     // console.log("handleCloseModal");
     setIsModalOpen(false);
-    setIsModalOpenNovoVideo(false);''
+    setIsModalOpenNovoVideo(false);
+    setIsModalVideo(false);
     setEditVideos(null);
   };
 
@@ -52,21 +63,27 @@ function App() {
 
   return (
     <VideoProvider>
-    <BrowserRouter className="app" >
-       {isModalOpen && ( /** isOpem = true ativa o modal , onClose = fecha o modal, videoEdit = video que vai ser editado, ele vai ser passado para o formulario */
+      <BrowserRouter className="app" >
+        {isModalOpen && ( /** isOpem = true ativa o modal , onClose = fecha o modal, videoEdit = video que vai ser editado, ele vai ser passado para o formulario */
           <ModalEdit isOpen={isModalOpen} onClose={handleCloseModal} videoEdit={editVideos} />
         )}
 
         {isModalOpenNovoVideo && ( /** isOpem = true ativa o modal , onClose = fecha o modal, videoEdit = video que vai ser editado, ele vai ser passado para o formulario */
-          <NovoVideo isOpen={isModalOpenNovoVideo} onClose={handleCloseModal }  />
+          <NovoVideo isOpen={isModalOpenNovoVideo} onClose={handleCloseModal} />
         )}
-      <Container>
-    
-        <Header 
-          criarCardVideo={criarCardVideo}
-          handleCloseModal={handleCloseModal}
-        />
-        
+
+        {isModalVideoOpen && (
+          <ModalVideo isOpen={isModalVideoOpen} onClose={handleCloseModal} idPlay={idPlay} />
+        )
+
+        }
+        <Container>
+
+          <Header
+            criarCardVideo={criarCardVideo}
+            handleCloseModal={handleCloseModal}
+          />
+
           <Routes>
             <Route path="/" element={
               <Home
@@ -75,19 +92,20 @@ function App() {
                 handleEdit={handleEdit}
                 isModalOpen={isModalOpen}
                 handleCloseModal={handleCloseModal}
+                playVideo={playVideo}
               />} />
             <Route path="/videos" element={<Videos />} />
-            <Route path="/:id" element={<Player />} />
-            <Route path="*" element={<h1>Página não encontrada</h1>} />
-            <Route path='/edit/:id' element={<ModalEdit />} />
-            <Route path='/novovideo' element={<NovoVideo />} />
+            <Route path="*" element={<Home />} />
+            {/* <Route path="/:id" element={<Player />} /> */}
+            {/* <Route path='/edit/:id' element={<ModalEdit />} /> */}
+            {/* <Route path='/novovideo' element={<NovoVideo />} /> */}
 
           </Routes>
-        
-        <Footer />
-      
-      </Container>
-    </BrowserRouter>
+
+          <Footer />
+
+        </Container>
+      </BrowserRouter>
     </VideoProvider>
   )
 }

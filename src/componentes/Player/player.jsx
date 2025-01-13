@@ -3,12 +3,15 @@ import style from "./player.module.css"
 import { VideosContext } from "../Context/videoContext";
 import { useContext } from "react";
 
-const Player = () => {
-    const params = useParams(); // captura o parametro passado na url
+const Player = ({idPlay}) => {
+    
+    
+   
+
     const { video } = useContext(VideosContext);
 
-    const videoFilter = video.find((video) => { return video.id === params.id })
-    // console.log("Componente Player",videoFilter);
+    const videoFilter = video.find((video) => { return video.id === idPlay })
+   
 
     return (
         <div className={style.player} >

@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 
-const Categoria = ({edit}) => {
+const Categoria = ({edit,playVideo}) => {
     const {video, setVideo} = useContext(VideosContext);
     const [categoria, setCategoria] = useState(["Front End", "Back End", "Mobile"]); // usaremos context api
   
@@ -46,8 +46,8 @@ const Categoria = ({edit}) => {
                                 img={video.img}
                                 src={video.src}
                                 descricao={video.descricao}
-                               
                                 edit={edit} // função que pega os video que sera editado
+                                playVideo={playVideo}
                                atualizarLista={atualizarLista}
                             />
                         ))

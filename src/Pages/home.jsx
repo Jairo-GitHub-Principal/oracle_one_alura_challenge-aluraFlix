@@ -20,7 +20,7 @@ const Home = (props) => {
                   
             <Banner height="832px" backgroundImage={bannerImagem} />
             <HomeMainStyled>
-               <Categoria edit={props.handleEdit} />
+               <Categoria edit={props.handleEdit} playVideo={props.playVideo}/>
                {props.editVideos ?               
                props.isModalOpen && ( /** isOpem = true ativa o modal , onClose = fecha o modal, videoEdit = video que vai ser editado, ele vai ser passado para o formulario */
                 <ModalEdit isOpen={props.isModalOpen} onClose={props.handleCloseModal} videoEdit={props.editVideos} />)
