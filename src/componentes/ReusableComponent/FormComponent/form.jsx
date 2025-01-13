@@ -77,6 +77,9 @@ const Form = (props, { onSubmit }) => {
     // Aqui você pode implementar a lógica para salvar os dados editados
   };
 
+  const handleClear = () => {
+    setFormData({ categoria: '', src: '', id: '' }); // Limpa o formulário
+  };
 
 
   return (
@@ -146,7 +149,7 @@ const Form = (props, { onSubmit }) => {
           {formData.id ? 'ATUALIZAR' : 'GUARDAR'} {/* Altera o texto do botão dependendo do estado */}
         </button>
 
-        <button className={styles.btn} type="button" >LIMPAR</button>
+        <button className={styles.btn} type="button" onClick={handleClear} >LIMPAR</button>
       </div>
 
 
