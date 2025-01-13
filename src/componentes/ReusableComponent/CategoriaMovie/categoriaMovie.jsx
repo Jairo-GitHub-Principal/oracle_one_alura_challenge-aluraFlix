@@ -16,6 +16,9 @@ const Categoria = ({edit,playVideo}) => {
    const atualizarLista = (id)=>{
         setVideo((prevSt)=>prevSt.filter((video)=>video.id !== id))
    }
+   
+
+   
 
        
    
