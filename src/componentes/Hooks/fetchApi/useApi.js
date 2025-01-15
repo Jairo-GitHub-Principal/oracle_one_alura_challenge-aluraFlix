@@ -13,6 +13,9 @@ export const useApi= () => {
 
  
         function getVideos(video, setVideo) {
+            // caminho da api- json server-arquivo  no github
+            // fetch("https://my-json-server.typicode.com/Jairo-GitHub-Principal/aluraFlix-api/videos") 
+            // caminho do nosso localhost
             fetch("http://localhost:3000/videos")
                  .then((resposta) => resposta.json())
                  .then((resposta) => setVideo(resposta))
@@ -73,7 +76,9 @@ export const useApi= () => {
         console.log("Salvando novo vídeo");
         try {
             // Buscar vídeos existentes para pegar o último  ID registrado que tambem deve ser o id de maior valor
-            const videos = await fetch("http://localhost:3000/videos")
+            const videos = await 
+                
+                fetch("http://localhost:3000/videos")
                 .then((response) => response.json());
                 /** com o cocdigo  da lina abixo pego o maior id registrado,  */
                 const maiorId = Math.max(...videos.map((video) => video.id), 0);
