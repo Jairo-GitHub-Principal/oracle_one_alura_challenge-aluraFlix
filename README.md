@@ -140,5 +140,14 @@ O AluraFlix foi projetado para ser totalmente responsivo, garantindo uma ótima 
 
 #### http://localhost:3000
 
+### obs.: é importante que para o correto funcionamento, da listagem de dados, bem como salvar deletar e editar, a instalação do json-serrver, que vai rodar um servidor, onde vai ficar disponibilizado um arquivo db.json que simulara um bancco de dados,
+### esse DB ficara disponivel na seguite url: http://localhost:3000/videos
+### como alternativa disponibilizo também a seguite url: https://my-json-server.typicode.com/Jairo-GitHub-Principal/aluraFlix-api/videos
+### essa url ela é uma api fake, que também vai servir um arquivo db.jon ja com alguns dados gravados que possibilita a visualização e algumas interaação, nos teste que fiz não consegui gravar deletar e nem editar card de video pela api fake, my-json-serrve
+### atualmente para a url para o get ou listar os ccards de video, estamos usando a url da  api fake, my-json-server pra poder listar os dados no projeto publicado no vercel, caso queira usar localmente, ao baixar  o projeto para abrir com o vsCode, 
+### na pasta  src/Componentes/hooks/fetchApi/ abra o arquivo useApi.js e comente a linha             fetch("https://my-json-server.typicode.com/Jairo-GitHub-Principal/aluraFlix-api/videos") 
+### e descomente a linha:              //fetch("http://localhost:3000/videos"), isso dara mais dinamismo ao projeto, permitindo visualizar os novos cards adicionados, ver as mudanças da edição de card, e a remoção dos cards removidos.
+
+
 ```bash
 
