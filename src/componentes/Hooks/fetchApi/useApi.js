@@ -14,9 +14,9 @@ export const useApi= () => {
  
         function getVideos(video, setVideo) {
             // caminho da api- json server-arquivo  no github
-            // fetch("https://my-json-server.typicode.com/Jairo-GitHub-Principal/aluraFlix-api/videos") 
+            fetch("https://my-json-server.typicode.com/Jairo-GitHub-Principal/aluraFlix-api/videos") 
             // caminho do nosso localhost
-            fetch("http://localhost:3000/videos")
+            //fetch("http://localhost:3000/videos")
                  .then((resposta) => resposta.json())
                  .then((resposta) => setVideo(resposta))
        
