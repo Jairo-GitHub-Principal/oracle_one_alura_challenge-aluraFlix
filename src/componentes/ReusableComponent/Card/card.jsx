@@ -50,7 +50,9 @@ const Card = ({ edit,playVideo, id, titulo, categoria, img, src, descricao, atua
     return (
         <CardContainerStyled $categoria={categoria} >
 
-            <img style={{ borderRadius: "10px" }} width={"100%"} height={"100%"} src={img} alt={titulo} />
+            <img style={{ borderRadius: "10px",cursor:"pointer" }} width={"100%"} height={"100%"} src={img} alt={titulo} 
+                onClick={handlePlay}
+            />
             {/* <iframe
                 width="100%"
                 height="100%"
