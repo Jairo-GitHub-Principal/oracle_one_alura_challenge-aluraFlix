@@ -3,14 +3,23 @@ import style from "./player.module.css"
 import { VideosContext } from "../Context/videoContext";
 import { useContext } from "react";
 
-const Player = ({idPlay}) => {
+const Player = ({idPlay,urlPlay}) => {
     
     
    
 
     const { video } = useContext(VideosContext);
+    let videoFilter={src:""};// precisei fazer assim pois se caso, não chegar o id pra fazer a filtragem, vai chegar uma url pronta, 
+    // e como estou passando como props o videoFilter.src, o video vai ficar vazio, mais eu pego 
+    //  url que chegar como props e passo como valor de src, assim não preciso mudar a props, videoFilter.src.
+   
+    if(idPlay){
+        videoFilter = video.find((video) => { return video.id === idPlay})
+    }else if(urlPlay){
+        videoFilter.src = urlPlay;
+    }
 
-    const videoFilter = video.find((video) => { return video.id === idPlay })
+    
    
 
     return (

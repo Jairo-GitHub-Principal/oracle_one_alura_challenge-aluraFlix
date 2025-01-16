@@ -2,8 +2,7 @@
 import Player from "../Player/player.jsx";
 import styles from "./modalVideo.module.css"
 
-const ModalVideo = ({ isOpen, onClose,idPlay }) => {
-
+const ModalVideo = ({ isOpen, onClose,idPlay,urlPlay }) => {
   
   if (!isOpen) {// quando isOpen for falso
     return null; //não exibe o modal
@@ -16,7 +15,7 @@ const ModalVideo = ({ isOpen, onClose,idPlay }) => {
                <div className={styles.modalContainer} >
                     <button className={styles.modalclose} onClick={onClose}>Fechar</button>
                     <div className={styles.containerVideo}>
-                     <Player idPlay={idPlay}/> 
+                     <Player idPlay={idPlay} urlPlay={urlPlay}/> 
                      </div>
 
               </div>

@@ -15,10 +15,11 @@ const Home = (props) => {
 
 
     return (
-        <HomeStyled > 
+        <HomeStyled >            
+
             
                   
-            <Banner height="832px" backgroundImage={bannerImagem} />
+            <Banner height="832px" backgroundImage={bannerImagem} playVideo={props.playVideo} />
             <HomeMainStyled>
                <Categoria edit={props.handleEdit} playVideo={props.playVideo}/>
                {props.editVideos ?               
