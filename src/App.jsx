@@ -19,6 +19,7 @@ function App() {
   const [isModalOpenNovoVideo, setIsModalOpenNovoVideo] = useState(false);
   const [isModalVideoOpen, setIsModalVideo] = useState(false);
   const [idPlay, setIdPlay] = useState(null);
+  const [urlPlay,setUrlPlay] = useState(null);
 
 
 
@@ -43,10 +44,23 @@ function App() {
 
   
   const playVideo = (id) => {
-   
-    setIsModalVideo(true);
+   /** abaixo temos uma  expressão regular de uma  url, que sera usada */
+   const isUrl = /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)(\/[\w-]*)*(\?.*)?(#.*)?$/;
+
+   setIsModalVideo(true);
+
+   if (isUrl.test(id)) { /**se for uma url chama o setUrlPlay, se não chama o setIdPlay  */
+    setUrlPlay(id);
+
+   }else{
     setIdPlay(id);
+   }
+
+  //  console.log("APP PlayVideo", id);
+    
   };
+
+ 
 
   const handleCloseModal = () => { // fechar o modal
     // console.log("handleCloseModal");
@@ -73,7 +87,7 @@ function App() {
         )}
 
         {isModalVideoOpen && (
-          <ModalVideo isOpen={isModalVideoOpen} onClose={handleCloseModal} idPlay={idPlay} />
+          <ModalVideo isOpen={isModalVideoOpen} onClose={handleCloseModal} idPlay={idPlay} urlPlay={urlPlay}  />
         )
 
         }

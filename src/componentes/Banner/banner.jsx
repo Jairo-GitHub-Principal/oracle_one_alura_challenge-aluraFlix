@@ -5,6 +5,12 @@ import Button from "../ReusableComponent/ButtonComponent/button";
 import imgVideo from "./imgbaner/imgVideo.png"
 
 const Banner = (props) => {
+
+    const handleClick = () => {
+        const url = "https://www.youtube.com/embed/7x4_HNC4Uu4?si=fUmZExvz3RRLS0G4";
+        props.playVideo(url);
+    };
+
     return (
         <BannerStyled
             $width={props.width}
@@ -59,9 +65,11 @@ const Banner = (props) => {
                 </div>
 
             </article>
-            <div className={style.videoContainer}>
+            <div className={style.videoContainer} >
 
-                <img className={style.video} src={imgVideo} alt="Video" />
+                <img className={style.video} src={imgVideo} alt="Video"
+                    onClick={handleClick}
+                />
 
             </div>
         </BannerStyled >
