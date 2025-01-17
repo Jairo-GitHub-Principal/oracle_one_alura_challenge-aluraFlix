@@ -18,6 +18,7 @@ const Categoria = ({ edit, playVideo }) => {
     };
 
     return (
+        (video.length > 0 )?
         <>
             {categoria.map((categoria) => {
                 // Filtra os vídeos pela categoria
@@ -58,7 +59,7 @@ const Categoria = ({ edit, playVideo }) => {
                     </CategoriaContainerStyled>
                 );
             })}
-        </>
+        </>:<h1>Carregando...</h1>
     );
 };
 
