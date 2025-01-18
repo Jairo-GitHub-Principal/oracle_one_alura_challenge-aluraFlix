@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import style from "./player.module.css"
-import { VideosContext } from "../Context/videoContext";
+import { VideosContext } from "../../Context/videoContext.jsx";
 import { useContext } from "react";
 
 const Player = ({idPlay,urlPlay}) => {

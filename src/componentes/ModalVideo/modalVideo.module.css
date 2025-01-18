@@ -37,7 +37,6 @@
   max-width: 974px;
   position: relative;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: relative;
   box-sizing: border-box;
   padding: 60px 30px;
 
@@ -47,11 +46,10 @@
 
 .containerVideo {
   display: flex;
-
+  box-sizing: border-box;
   margin-top: 30px;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box;
 
 }
 

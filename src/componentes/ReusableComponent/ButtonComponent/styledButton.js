@@ -12,7 +12,7 @@ position: relative;
     width: ${({ $width }) => $width || "100px"};
     height: ${({ $height }) => $height || "40px"};
     font-weight:${({ $weight }) => $weight || "normal"};
-    border: ${({ $border }) => $border ? `solid 1px ${$border}` : "none"};
+    border: ${({ $border }) => $border ? `solid 1px  ${$border}` : "none"};
     border-radius:${({ $borderRadius }) => $borderRadius || "15px"};
     box-shadow: ${({ $border }) => $border ? `0px 0px 10px 1px ${$border}` : "none"};
     margin-top: ${({ $marginTop }) => $marginTop || "0"};
@@ -20,6 +20,7 @@ position: relative;
     margin: ${({ $margin }) => $margin || "0"};
     padding:${({ $padding }) => $padding || "0"};
     cursor: pointer;
+
     /** condição para a cor do botão e a cor do texto */
     background-color: ${({ $categoria }) => {
         switch ($categoria) {
@@ -29,6 +30,8 @@ position: relative;
                 return "rgba(0, 200, 111, 1)";
             case "Mobile":
                 return "rgba(255, 186, 5, 1)";
+                case"Inovação e Gestão":
+                return "rgba(255, 186, 155, 1)";
             default:
                 return "black";
         }
@@ -46,6 +49,8 @@ position: relative;
                 return "white";
         }
     }};
+
+   
 
     /**font */
     font-family: Source Sans Pro;    

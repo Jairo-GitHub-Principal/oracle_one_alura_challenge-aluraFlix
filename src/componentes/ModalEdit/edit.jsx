@@ -3,8 +3,9 @@ import style from "./modalEdit.module.css";
 import Form from "../ReusableComponent/FormComponent/form";
 import { OverLay, ModalContainer, DialogStyled } from "./styleEdit.js";
 import { useContext } from "react"
-import { VideosContext } from "../../componentes/Context/videoContext"
-import Player from "../Player/player.jsx";
+import { VideosContext } from "../../Context/videoContext.jsx"
+import { IoIosCloseCircleOutline } from "react-icons/io";
+
 
 
 const ModalEdit = ({ isOpen, onClose, videoEdit  }) => {
@@ -22,7 +23,9 @@ const ModalEdit = ({ isOpen, onClose, videoEdit  }) => {
 
         
          <div>
-         <button className={style.modalclose} onClick={onClose}>Fechar</button>
+         <button className={style.modalclose} onClick={onClose}>
+         <IoIosCloseCircleOutline  size={50} className={style.xclose} />
+         </button>
 
           <Form video={videoEdit}
             videos={video}

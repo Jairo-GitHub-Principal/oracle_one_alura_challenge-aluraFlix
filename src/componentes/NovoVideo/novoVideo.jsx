@@ -2,7 +2,9 @@ import style from "./novoVideo.module.css"
 import Form from "../ReusableComponent/FormComponent/form"
 import Text from "../ReusableComponent/TextComponent/text"
 import { useContext } from "react"
-import { VideosContext } from "../../componentes/Context/videoContext"
+import { VideosContext } from "../../Context/videoContext.jsx"
+import { IoIosCloseCircleOutline } from "react-icons/io";
+
 
 
 const NovoVideo = ({ isOpen, onClose }) => {
@@ -27,7 +29,9 @@ const NovoVideo = ({ isOpen, onClose }) => {
                 </div>
 
                 <div className={style.novoVideoForm}>
-                <button className={style.modalclose} onClick={onClose}>Fechar</button>
+                <button className={style.modalclose} onClick={onClose}>
+                    <IoIosCloseCircleOutline  size={50} className={style.xclose} />
+                </button>
                     
                     <Form titulo="Criar Card de Video"
                         display="flex"

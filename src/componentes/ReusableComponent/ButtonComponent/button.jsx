@@ -1,16 +1,17 @@
-import { useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { ButtonStyled } from "./styledButton";
+import { memo } from "react";
 import PropTypes from 'prop-types'; // fazer validação de props
 
 
 // eslint-disable-next-line react/prop-types
-const Button = ({ children, $padding, $size, $border, $width, $height, $weight,$categoria,click,$fontTablet,$alignSelf,$buttonSamrtPhone,$paddingSamrtPhone,$hide}) => {
-    // console.log("Button",$categoria);
+const Button = memo(  ({ children, $padding, $size, $border, $width, $height, $weight,$categoria,click,$fontTablet,$alignSelf,$buttonSamrtPhone,$paddingSamrtPhone,$hide,activeButton}) => {
+    console.log("activeButton no compoente button",activeButton);
+    // const [isActive, setIsActive] = useState("");
+   
 
-    const [isActive, setIsActive] = useState(false);
 
-    const handleClick = (event) => {
-        // console.log("Evento", event);
+       const handleClick =  (event) => {
         
         event.preventDefault(); // Impede o carregamento da página
     
@@ -21,31 +22,32 @@ const Button = ({ children, $padding, $size, $border, $width, $height, $weight,$
             console.warn("A prop `click` não é uma função válida.");
         }
         
-        setIsActive(!!isActive);
+        
       
     };
     return (
         <ButtonStyled
-            $size={$size}
-            $width={$width}
-            $height={$height} 
-            $weight = {$weight} 
-            $border = {$border}
-            $categoria = {$categoria}
-            onClick={handleClick} // Função vazia como fallback
-            $fontTablet = {$fontTablet}
-            $alignSelf = {$alignSelf}
-            $buttonSamrtPhone = {$buttonSamrtPhone}
-            paddingSamrtPhone = {$paddingSamrtPhone}
-            $padding = {$padding}
-            $hide = {$hide}
-
+        $size={$size}
+        $width={$width}
+        $height={$height} 
+        $weight = {$weight} 
+        $border = {$border}
+        $categoria = {$categoria}
+        onClick={handleClick} // Função vazia como fallback
+        $fontTablet = {$fontTablet}
+        $alignSelf = {$alignSelf}
+        $buttonSamrtPhone = {$buttonSamrtPhone}
+        paddingSamrtPhone = {$paddingSamrtPhone}
+        $padding = {$padding}
+        $hide = {$hide}
+        $activeButton = {activeButton}
             >
             {children}
         </ButtonStyled>
     );
-};
+});
 
+Button.displayName = "Button";
 /**  validar as props */
 
 Button.propTypes = {

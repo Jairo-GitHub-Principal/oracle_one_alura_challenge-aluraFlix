@@ -1,16 +1,25 @@
-
-.buttonHomeMobile{ /* botão home mobile*/
-    display: none;
-}
-.novoVideoMobile{
+.buttonHomeMobile {
+    /* botão home mobile*/
     display: none;
 }
 
+.novoVideoMobile {
+    display: none;
+}
 
-@media(max-width:450px){
-    .buttonHomeMobile{
+.buttonHome {
+    width: 180.13px;
+    height: 54px;
+    background: black;
+
+
+}
+
+
+@media(max-width:450px) {
+    .buttonHomeMobile {
         position: absolute;
-        display:flex;
+        display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
@@ -21,12 +30,12 @@
         border-radius: 30px;
         background: none;
         cursor: pointer;
-        outline:none;
+        outline: none;
 
     }
 
-    .novoVideoMobile{
+    .novoVideoMobile {
         display: flex;
     }
-    
+
 }

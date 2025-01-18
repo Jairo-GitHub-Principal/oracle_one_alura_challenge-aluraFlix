@@ -1,5 +1,4 @@
 import { useContext, useEffect } from "react";
-import {VideosContext} from "../../Context/videoContext.jsx"
 
 
 
@@ -11,62 +10,23 @@ export const atualizarLista =(video,setVideo)=> {
 export const useApi= () => {
    
 
- 
-        function getVideos(video, setVideo) {
-            // caminho da api- json server-arquivo  no github
-            //fetch("https://my-json-server.typicode.com/Jairo-GitHub-Principal/aluraFlix-api/videos") 
-            // caminho do nosso localhost
-             fetch("http://localhost:3000/videos")
-                 .then((resposta) => resposta.json())
-                 .then((resposta) => setVideo(resposta))
-       
-
-       }
-
-
-
-        
-
-    
-     
-
-    //     const saveVideo = async (video,isUpdate = false) => {
-    //         console.log("API",isUpdate)
-    //     try {   
-    //                 /** criar um id de video diferente e maior que  ultimo adicionado */
-    //                 const videos = await fetch("http://localhost:3000/videos")
-    //                 .then((response)=>response.json())
-    //                 const lastVideo = videos[videos.length - 1];
-    //                 const newId = lastVideo ? lastVideo.id + 1 : 1
-
-    //                 video.id = newId;
-    //             /**  se isUpdate for true, vai add  o id no fim  da url se não, seta a url sem id */
-               
-    //             const url = isUpdate ? `http://localhost:3000/videos/?id=${video.id}` : "http://localhost:3000/videos";
-    //             const method = isUpdate ?  "PUT":"POST"; // setaa o  metodo de acordo com o estado de isUpdate
-                
-                
-    //         const response = await fetch(url, {
-    //             method, // metodo sera selecionado dinamicamentne
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //             },
-    //             body: JSON.stringify(video), // Envia os dados no corpo da requisição
-    //         });
-    
-    //         if (!response.ok) {
-    //             throw new Error("Erro ao salvar o vídeo");
-    //         }
-    
-    //         return await response.json(); // Retorna o objeto salvo
-    //     } catch (error) {
-    //         console.error("Erro:", error);
-    //         throw error;
-    //     }
-    // };
+   
+       const getVideos = async (video, setVideo)=> {
+        try {
+            // Caminho da API - JSON Server - arquivo no GitHub
+            const resposta = await fetch("https://my-json-server.typicode.com/Jairo-GitHub-Principal/aluraFlix-api/videos");
+            // Caminho do nosso localhost
+            //const resposta = await fetch("http://localhost:3000/videos");
+            
+            const dados = await resposta.json();
+            setVideo(dados);
+        } catch (erro) {
+            console.error("Erro ao buscar vídeos:", erro);
+        }
+    }
     
 
-    /** salvar video */
+       /** salvar video */
 
            // Atualizar listagem apos add video
 

@@ -2,8 +2,8 @@ import { CategoriaContainerStyled, CategoriaMovieContainerStyled } from "./categ
 // import { ButtonStyled } from "../ButtonComponent/styledButton.js";
 import Button from "../ButtonComponent/button.jsx";
 import Card from "../Card/card.jsx";
-import { useContext,  useEffect,  useState } from "react";
-import {VideosContext} from "../../Context/videoContext.jsx";
+import { useContext } from "react";
+import {VideosContext} from "../../../Context/videoContext.jsx";
 // import { v4 as uuidv4 } from 'uuid';
 
 
@@ -11,7 +11,7 @@ import {VideosContext} from "../../Context/videoContext.jsx";
 
 const Categoria = ({ edit, playVideo }) => {
     const { video, setVideo } = useContext(VideosContext);
-    const [categoria, setCategoria] = useState(["Front End", "Back End", "Mobile"]); // Usaremos o context API
+    const {categorias, setCategorias} = useContext(VideosContext);
 
     const atualizarLista = (id) => {
         setVideo((prevSt) => prevSt.filter((video) => video.id !== id));
@@ -20,9 +20,9 @@ const Categoria = ({ edit, playVideo }) => {
     return (
         (video.length > 0 )?
         <>
-            {categoria.map((categoria) => {
+            {categorias.map((cat) => {
                 // Filtra os vídeos pela categoria
-                const videosNaCategoria = video.filter((videos) => videos.categoria === categoria);
+                const videosNaCategoria = video.filter((videos) => videos.categoria === cat.categoria);
 
                 // Se não houver vídeos para a categoria, não renderiza o contêiner da categoria
                 if (videosNaCategoria.length === 0) {
@@ -30,15 +30,15 @@ const Categoria = ({ edit, playVideo }) => {
                 }
 
                 return (
-                    <CategoriaContainerStyled key={categoria}>
+                    <CategoriaContainerStyled key={cat.id}>
                         <Button
                             $width="432px"
                             $height="70px"
                             $size="2.2rem"
-                            $categoria={categoria}
+                            $categoria={cat.categoria}
                             $buttonSamrtPhone="292px"
                         >
-                            {categoria}
+                            {cat.categoria}
                         </Button>
                         <CategoriaMovieContainerStyled>
                             {videosNaCategoria.map((video) => (

@@ -6,16 +6,27 @@ import imgLogo from "../../assets/img/logo/logoAluraFlix.png"
 import { Link } from "react-router-dom"
 import { GoHome } from "react-icons/go";
 import { BiPlusCircle } from "react-icons/bi";
+import { useState } from "react"
+
 
 
 const Header = (props) => {
+    const [activeButton, setActiveButton] = useState("home");
 
-    const handleClick = () => {
-        // event.preventDefault();
-
+    const handleClick = (event) => {
+         event.preventDefault();
+        setActiveButton("novoVideo");
+       
         props.criarCardVideo(); // Passa os dados do vídeo para o método edit
     };
 
+const hundleHome = (event) => {
+    setActiveButton("home");
+    console.log(activeButton);
+    return activeButton
+}
+
+  
     return (
         <>
             <HeaderStyled>
@@ -31,11 +42,18 @@ const Header = (props) => {
                         $height="54px"
                         $size="16px"
                         $weight="bold"
-                        $color="rgba(34, 113, 209, 1)"
-                        $border="rgba(34, 113, 209, 1)"
-                        $backgroundColor="#000000"
+                        $color="rgba(255, 255, 255, 1)"
+                        $border={activeButton === "home" ? "#1675c9" : "#f9f9f9"}
+                        $backgroundColor=  "#181515"
                         buttonSamrtPhone="134px"
                         paddingSamrtPhone="5px"
+                        activeButton={activeButton}
+                        click={hundleHome}
+                        
+                       
+
+                       
+
                     ><Link to="/" style={{ textDecoration: "none", color: "white", fontSize: "25px", borderRadius: "30px",outline:"none" }}  >
                        <GoHome size={30} className={styles.buttonHomeMobile} /> 
                        Home</Link></Button>
@@ -48,11 +66,11 @@ const Header = (props) => {
                         $height="54px"
                         $weight="bold"
                         $color="rgba(255, 255, 255, 1)"
-                        $border="rgba(255, 255, 255, 1)"
+                        $border={activeButton === "novoVideo" ? "#1675c9" : "#f9f9f9"}
                         $backgroundColor="#000000"
                         $hide="true"
-                        
                         click={handleClick}
+
 
                     >
                         

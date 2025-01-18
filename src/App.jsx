@@ -6,12 +6,11 @@ import Videos from './Pages/Videos.jsx';
 import Header from "./componentes/Header/header.jsx";
 import Footer from './componentes/Footer/footer.jsx';
 import Container from './componentes/Container/container.jsx';
-import VideoProvider from './componentes/Context/videoContext.jsx';
-import Player from './componentes/Player/player.jsx';
+import VideoProvider from './Context/videoContext.jsx';
 import ModalEdit from './componentes/ModalEdit/edit.jsx';
 import NovoVideo from './componentes/NovoVideo/novoVideo.jsx';
 import ModalVideo from './componentes/ModalVideo/modalVideo.jsx';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 function App() {
   const [editVideos, setEditVideos] = useState([null]);

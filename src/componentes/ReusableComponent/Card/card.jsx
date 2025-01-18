@@ -6,10 +6,10 @@ import { FaExpand } from "react-icons/fa";
 import { FaRegCirclePlay } from "react-icons/fa6";
 
 import { Link } from "react-router-dom";
-import { useApi } from "../../Hooks/fetchApi/useApi.js"
+import { useApi } from "../../../Hooks/fetchApi//useApi.js";
 
 import { useContext, useEffect } from "react";
-import { VideosContext } from "../../Context/videoContext.jsx"
+import { VideosContext } from "../../../Context/videoContext.jsx";
 
 
 
