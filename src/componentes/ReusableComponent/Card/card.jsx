@@ -7,8 +7,8 @@ import { FaRegCirclePlay } from "react-icons/fa6";
 
 import { Link } from "react-router-dom";
 import { useApi } from "../../../Hooks/fetchApi//useApi.js";
-
-import { useContext, useEffect } from "react";
+import useService from "../../../Hooks/Services/useService.js";
+import { useContext } from "react";
 import { VideosContext } from "../../../Context/videoContext.jsx";
 
 
@@ -19,10 +19,11 @@ const Card = ({ edit,playVideo, id, titulo, categoria, img, src, descricao, atua
     // console.log("Card",{ id:id,titulo:titulo, categoria:categoria,img:img,src:src,desccricao:descricao});
 // console.log("Card: id: ", id);
     const { deleteVideo } = useApi();
+    const {editVideo} = useService();
     const handleEditClick = (event) => {
 
         const videoData = { id, titulo, categoria, img, src, descricao };
-        edit(videoData); // Passa os dados do vídeo para o método edit
+        editVideo(videoData); // Passa os dados do vídeo para o método edit
     };
 
     const handlePlay = (event) => {

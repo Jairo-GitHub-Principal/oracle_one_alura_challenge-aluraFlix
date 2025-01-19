@@ -6,25 +6,31 @@ import imgLogo from "../../assets/img/logo/logoAluraFlix.png"
 import { Link } from "react-router-dom"
 import { GoHome } from "react-icons/go";
 import { BiPlusCircle } from "react-icons/bi";
-import { useState } from "react"
+import { useContext } from "react"
+import { VideosContext } from "../../Context/videoContext.jsx"
+import useService from "../../Hooks/Services/useService.js";
 
 
 
 const Header = (props) => {
-    const [activeButton, setActiveButton] = useState("home");
+    
+    const {abrirModal, criarCardVideo} = useService();
+    const{activeButton, setActiveButton}=useContext(VideosContext);
+    
+
 
     const handleClick = (event) => {
          event.preventDefault();
         setActiveButton("novoVideo");
        
-        props.criarCardVideo(); // Passa os dados do vídeo para o método edit
+        //props.criarCardVideo(); // Passa os dados do vídeo para o método edit
     };
 
 const hundleHome = (event) => {
     setActiveButton("home");
     console.log(activeButton);
-    return activeButton
 }
+
 
   
     return (
@@ -32,10 +38,21 @@ const hundleHome = (event) => {
             <HeaderStyled>
                     <Link to="/" style={{ textDecoration: "none", color: "white" }}>
                         <Image maxWidth="168px" height="40px" src={imgLogo} alt="Logo AluraFlix" />
-
                     </Link>
+
+
                 
                 <NavContainer>
+                    {/* <Button
+                        $fontTablet="1.5rem"
+                        $height="54px"
+                        $size="25px"
+                        $weight="bold"
+                        $color="rgba(255, 255, 255, 1)"
+                        $border={activeButton === "novoVideo" ? "#1675c9" : "#f9f9f9"}
+                        click={abrirModal}
+                    > Modal teste</Button> */}
+                    
                     <Button
                         $fontTablet="1.5rem"
                         $width="180px"
@@ -69,7 +86,7 @@ const hundleHome = (event) => {
                         $border={activeButton === "novoVideo" ? "#1675c9" : "#f9f9f9"}
                         $backgroundColor="#000000"
                         $hide="true"
-                        click={handleClick}
+                        click={criarCardVideo}
 
 
                     >

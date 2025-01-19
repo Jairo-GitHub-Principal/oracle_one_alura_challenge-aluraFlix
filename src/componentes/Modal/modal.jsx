@@ -1,24 +1,25 @@
-import style from "./novoVideo.module.css"
+import style from "./modal.module.css"
 import Form from "../ReusableComponent/FormComponent/form"
 import Text from "../ReusableComponent/TextComponent/text"
-import { useContext } from "react"
-import { VideosContext } from "../../Context/videoContext.jsx"
 import { IoIosCloseCircleOutline } from "react-icons/io";
-import useService from "../../Hooks/Services/useService.js"
+import useService from "../../Hooks/Services/useService";
+import { useContext } from "react";
+import { VideosContext } from "../../Context/videoContext";
 
 
 
-const NovoVideo = () => {
-    const {closeModal}= useService();
-    const {isModalOpenNovoVideo} = useContext(VideosContext);
-    // console.log("NovoVideo", isModalOpenNovoVideo);
-    const {  setVideo } = useContext(VideosContext) /** usado para passar o setVideo para  o metodo 
-                                                              saveVideo, que o passara pa getVideos, pra 
-                                                           atualizar o estdo, apos salvar o video ou atualizar*/
+const Modal = () => {
+    const {isModalTest} = useContext(VideosContext);
+    const {closeModal} = useService();
+    console.log("Modal isModalTest", isModalTest);
+       
 
-    if (!isModalOpenNovoVideo) {// quando isOpen for falso
+   
+
+    if (!isModalTest) {// quando isOpen for falso
         return null; //não exibe o modal
     } else {
+        
         return (
             <div className={style.overlay}>
 
@@ -37,14 +38,14 @@ const NovoVideo = () => {
                     <IoIosCloseCircleOutline  size={50} className={style.xclose} />
                 </button>
                     
-                    <Form titulo="Criar Card de Video"
+                    {/* <Form titulo="Criar Card de Video"
                         display="flex"
                         alignItems="center"
                         justifyContent="space-between"
                         padding="30px"
                         setVideo={setVideo}
 
-                    />
+                    /> */}
                 </div>
 
 
@@ -54,4 +55,4 @@ const NovoVideo = () => {
     }
 }
 
-export default NovoVideo
+export default Modal

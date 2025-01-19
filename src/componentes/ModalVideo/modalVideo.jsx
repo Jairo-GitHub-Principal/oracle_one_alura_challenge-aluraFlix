@@ -2,9 +2,16 @@
 import Player from "../Player/player.jsx";
 import styles from "./modalVideo.module.css"
 
-const ModalVideo = ({ isOpen, onClose,idPlay,urlPlay }) => {
+import useService from "../../Hooks/Services/useService.js";
+import { useContext } from "react";
+import { VideosContext } from "../../Context/videoContext.jsx";
+
+const ModalVideo = ({ isOpen,idPlay,urlPlay }) => {
+
+  const {closeModal}= useService();
+  const{isModalVideoOpen}=useContext(VideosContext);
   
-  if (!isOpen) {// quando isOpen for falso
+  if (!isModalVideoOpen) {// quando isOpen for falso
     return null; //não exibe o modal
   } else {
     return ( // exibe o modal
@@ -13,7 +20,7 @@ const ModalVideo = ({ isOpen, onClose,idPlay,urlPlay }) => {
           <dialog className={styles.dialogStyled}></dialog>
 
                <div className={styles.modalContainer} >
-                    <button className={styles.modalclose} onClick={onClose}>Fechar</button>
+                    <button className={styles.modalclose} onClick={closeModal}>Fechar</button>
                     <div className={styles.containerVideo}>
                      <Player idPlay={idPlay} urlPlay={urlPlay}/> 
                      </div>

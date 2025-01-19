@@ -6,14 +6,18 @@ import { useContext } from "react"
 import { VideosContext } from "../../Context/videoContext.jsx"
 import { IoIosCloseCircleOutline } from "react-icons/io";
 
+import useService from "../../Hooks/Services/useService.js";
 
 
-const ModalEdit = ({ isOpen, onClose, videoEdit  }) => {
+
+const ModalEdit = () => {
   // console.log("ModalEdit",videoEdit);
-  const { video, setVideo } = useContext(VideosContext)
+  const {  setVideo,videoEdit,isModaEditVideo } = useContext(VideosContext)
+  const {closeModal} = useService();
+  console.log("ModalEdit isModalOpen",isModaEditVideo);
 
 
-  if (!isOpen) {// quando isOpen for falso
+  if (!isModaEditVideo) {// quando isOpen for falso
     return null; //não exibe o modal
   } else {
     return ( // exibe o modal
@@ -23,12 +27,11 @@ const ModalEdit = ({ isOpen, onClose, videoEdit  }) => {
 
         
          <div>
-         <button className={style.modalclose} onClick={onClose}>
+         <button className={style.modalclose} onClick={closeModal}>
          <IoIosCloseCircleOutline  size={50} className={style.xclose} />
          </button>
 
           <Form video={videoEdit}
-            videos={video}
             setVideo={setVideo}
             onSubmit={() => console.log("Lista atualizada!")}
             titulo="Editar Card de Video"

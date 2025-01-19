@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'; // fazer validação de props
 
 // eslint-disable-next-line react/prop-types
 const Button = memo(  ({ children, $padding, $size, $border, $width, $height, $weight,$categoria,click,$fontTablet,$alignSelf,$buttonSamrtPhone,$paddingSamrtPhone,$hide,activeButton}) => {
-    console.log("activeButton no compoente button",activeButton);
+    // console.log("activeButton no compoente button",activeButton);
     // const [isActive, setIsActive] = useState("");
    
 

@@ -36,23 +36,24 @@ export const useApi= () => {
         console.log("Salvando novo vídeo");
         try {
             // Buscar vídeos existentes para pegar o último  ID registrado que tambem deve ser o id de maior valor
-            const videos = await 
-                
-                fetch("http://localhost:3000/videos")
+            const videos = await fetch("http://localhost:3000/videos") // com essa requisição nos recuperamos todos os videos,
+                                                                        // em um array, response, e a prtir dele consiguiremos pesquisar o maior id
+                                                                        // e a partir dele nos criaremos un novo id, sem repetir um id ja existente
                 .then((response) => response.json());
-                /** com o cocdigo  da lina abixo pego o maior id registrado,  */
+                /** com o cocdigo  da lina abixo pego o maior id registrado, pra criar um novo id */
                 const maiorId = Math.max(...videos.map((video) => video.id), 0);
                 console.log("Maior ID",maiorId);
                 console.log("Tipo de maiorId",typeof maiorId);
            
-
+            // a partir do maior id nos criaremos um novo id
             const lastVideo = maiorId;
             console.log("ultimo id registrado", lastVideo);
             console.log("latestVideo tem o tipo", typeof lastVideo);
             const newId = lastVideo ? lastVideo + 1 : 1;// se lastVideo for true, incrementa o lastVideo + 1 para criar um id de maior valor que o maior id existente na tabela de registros de video
             console.log("Novo id", newId);
             video.id = String(newId); // Atribuindo novo ID ao vídeo
-    
+            
+            // agora como ja sabemos qual é o maior id, e ja criamos um  novo id, podemos salvar o video
             const url = "http://localhost:3000/videos"; // URL para salvar um novo vídeo
             const method = "POST"; // Método POST para criar um novo vídeo
     
