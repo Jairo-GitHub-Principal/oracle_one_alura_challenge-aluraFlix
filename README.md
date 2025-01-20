@@ -148,6 +148,6 @@ O AluraFlix foi projetado para ser totalmente responsivo, garantindo uma ótima 
 ### na pasta  src/Componentes/hooks/fetchApi/ abra o arquivo useApi.js e comente a linha             fetch("https://my-json-server.typicode.com/Jairo-GitHub-Principal/aluraFlix-api/videos") 
 ### e descomente a linha:              //fetch("http://localhost:3000/videos"), isso dara mais dinamismo ao projeto, permitindo visualizar os novos cards adicionados, ver as mudanças da edição de card, e a remoção dos cards removidos.
 
-
+fazendo melhorias...
 ```bash
 
