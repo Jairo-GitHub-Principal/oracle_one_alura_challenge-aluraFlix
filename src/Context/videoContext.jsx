@@ -24,6 +24,7 @@ export default function VideoProvider({children}){
     const [urlPlay,setUrlPlay] = useState(null);
     const [editVideos, setEditVideos] = useState([null]);
     const [activeButton, setActiveButton] = useState("home");
+    
 
 
 
@@ -51,7 +52,8 @@ export default function VideoProvider({children}){
             urlPlay,setUrlPlay,
             editVideos, setEditVideos,
             videoEdit, setVideoEdit,
-            activeButton, setActiveButton
+            activeButton, setActiveButton,
+            
             }}>
             {children}
         </VideosContext.Provider>

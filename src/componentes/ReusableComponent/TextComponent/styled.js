@@ -4,7 +4,7 @@ const TextStyled = styled.p`
   font-size: ${(props) => props.$size || "16px"};
   font-weight: ${(props) => props.$weight || "normal"};
   color: ${(props) => props.$color || "#000"};
-  margin: ${(props) => props.$margin || "0"};
+  margin: ${(props) => props.$margin || "0px"};
   padding: ${({$padding}) => $padding || "0"};
   line-height: ${(props) => props.$lineHeight || "1.5"};
   text-align: ${({$textAline}) => $textAline || "left"};
@@ -31,7 +31,7 @@ const TextContainerStyled = styled.div`
     max-width:${({$maxWidth}) => $maxWidth || "100%"};
     width:${({$width}) => $width || "100%"};
     height:${({$height}) => $height };
-    padding: 10px;
+    padding:0;
     margin:0;
     
 `

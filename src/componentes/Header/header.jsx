@@ -43,7 +43,7 @@ const hundleHome = (event) => {
 
                 
                 <NavContainer>
-                    {/* <Button
+                     {/* <Button
                         $fontTablet="1.5rem"
                         $height="54px"
                         $size="25px"
@@ -96,7 +96,7 @@ const hundleHome = (event) => {
                        
                     </Button>
                     <div >
-                    <BiPlusCircle size={60}className={styles.novoVideoMobile}  onClick={handleClick} />
+                    <BiPlusCircle size={60}className={styles.novoVideoMobile}  onClick={criarCardVideo} />
                     </div>
                    
                 </NavContainer>

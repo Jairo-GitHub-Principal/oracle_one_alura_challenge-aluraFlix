@@ -5,7 +5,7 @@ import { VideosContext } from "../../../Context/videoContext";
 import { memo } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
-import { useApi } from "../../../Hooks/fetchApi/useApi"; // Ajuste o caminho conforme necessário
+import {useApi} from "../../../Hooks/fetchApi/useApi"; // Ajuste o caminho conforme necessário
 
 
 

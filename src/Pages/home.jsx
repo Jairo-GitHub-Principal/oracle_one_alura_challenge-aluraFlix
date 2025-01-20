@@ -16,9 +16,9 @@ const Home = (props) => {
     return (
         <HomeStyled >       
 
-            <Banner height="832px" backgroundImage={bannerImagem} playVideo={props.playVideo} />
+            <Banner height="832px" backgroundImage={bannerImagem}/>
             <HomeMainStyled>
-               <Categoria  playVideo={props.playVideo}/>
+               <Categoria  />
 
             </HomeMainStyled>
         </HomeStyled>

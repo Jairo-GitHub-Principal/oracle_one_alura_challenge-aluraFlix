@@ -6,7 +6,7 @@ import useService from "../../Hooks/Services/useService.js";
 import { useContext } from "react";
 import { VideosContext } from "../../Context/videoContext.jsx";
 
-const ModalVideo = ({ isOpen,idPlay,urlPlay }) => {
+const ModalVideo = () => {
 
   const {closeModal}= useService();
   const{isModalVideoOpen}=useContext(VideosContext);
@@ -22,7 +22,7 @@ const ModalVideo = ({ isOpen,idPlay,urlPlay }) => {
                <div className={styles.modalContainer} >
                     <button className={styles.modalclose} onClick={closeModal}>Fechar</button>
                     <div className={styles.containerVideo}>
-                     <Player idPlay={idPlay} urlPlay={urlPlay}/> 
+                     <Player/> 
                      </div>
 
               </div>

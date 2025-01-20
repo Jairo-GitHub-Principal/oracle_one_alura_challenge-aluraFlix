@@ -4,18 +4,22 @@ import Button from "../ButtonComponent/button.jsx";
 import Card from "../Card/card.jsx";
 import { useContext } from "react";
 import {VideosContext} from "../../../Context/videoContext.jsx";
+import {useApi} from "../../../Hooks/fetchApi/useApi.js";
 // import { v4 as uuidv4 } from 'uuid';
 
 
 
 
-const Categoria = ({ edit, playVideo }) => {
+const Categoria = () => {
     const { video, setVideo } = useContext(VideosContext);
-    const {categorias, setCategorias} = useContext(VideosContext);
+    const {categorias} = useContext(VideosContext);
 
-    const atualizarLista = (id) => {
+    const atualizarLista =  (id) => {
         setVideo((prevSt) => prevSt.filter((video) => video.id !== id));
-    };
+    }; 
+
+    
+    
 
     return (
         (video.length > 0 )?
@@ -50,8 +54,6 @@ const Categoria = ({ edit, playVideo }) => {
                                     img={video.img}
                                     src={video.src}
                                     descricao={video.descricao}
-                                    edit={edit} // Função que pega os vídeos que serão editados
-                                    playVideo={playVideo}
                                     atualizarLista={atualizarLista}
                                 />
                             ))}
@@ -62,5 +64,7 @@ const Categoria = ({ edit, playVideo }) => {
         </>:<h1>Carregando...</h1>
     );
 };
+
+
 
 export default Categoria;

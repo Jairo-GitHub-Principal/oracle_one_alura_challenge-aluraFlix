@@ -8,15 +8,17 @@ import { VideosContext } from "../../Context/videoContext";
 const useService = () => {
 
 const {
-        isModalTest,isModalOpenNovoVideo,isModalVideoOpen,isModaEditVideo,
-        activeButton
+  isModalTest,isModalOpenNovoVideo,isModaEditVideo,isModalVideoOpen,
+  activeButton,  
+        
         
  } = useContext(VideosContext);
 const {
         setIsModalTest, setIsModalOpenNovoVideo, 
         setIsModaEditVideo, setIsModalVideo, 
-        setEditVideos,setIdPlay,
-        setVideoEdit,setActiveButton
+        setEditVideos,setIdPlay,setUrlPlay,setVideo,
+        setVideoEdit,setActiveButton,
+        
       } = useContext(VideosContext);
 
    
@@ -49,16 +51,31 @@ const {
         setActiveButton("novoVideo");
       };
 
+
+      
       const playVideo = (id) => {
+        /** nas duas linhas abaixo nos garantimos que cada estado esteja vazio
+         * pois temos um teste pra garantir que o que temos é uma url ou um id
+         * o valor que vem com uma url ja defida é o video do banner, e o id vem do card
+         * se eu clicar em um video do card, ele atualiza um estado a variave videoFilter
+         * que é atribuida como valor para src do iframe, uma vez clicado no card
+         * assistido e depois eu clicar no banner a variavel videoFilter vai ter o valor oriundo da filtragem 
+         * feita por idPlay, e exibira o video do card, por isso é importante garantir que ambos os   estados estejam limpos
+         * antes de executar o play         */
+        setIdPlay(null);
+        setUrlPlay(null);
+       
         setIsModalVideo(true);
         console.log("userService playVideo clicado", id);
-       
         /** abaixo temos uma  expressão regular de uma  url, que sera usada */
         const isUrl = /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)(\/[\w-]*)*(\?.*)?(#.*)?$/;
      
        
      
         if (isUrl.test(id)) { /**se for uma url chama o setUrlPlay, se não chama o setIdPlay  */
+
+          console.log("Banner handlePlay clicado em banner: ",id);
+
          setUrlPlay(id);
      
         }else{
@@ -80,9 +97,12 @@ const {
         // console.log("useService videoEdit ", videoEdit);
       };
 
+    
+
+
     return {
          abrirModal,closeModal,
-         criarCardVideo,editVideo,playVideo
+         criarCardVideo,editVideo,playVideo,
          
     
     };

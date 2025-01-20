@@ -2,24 +2,20 @@ import { CardContainerStyled, CardContainerButtonStyled } from "./cardStyled.js"
 import Button from "../ButtonComponent/button.jsx";
 import { MdDelete } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
-import { FaExpand } from "react-icons/fa";
 import { FaRegCirclePlay } from "react-icons/fa6";
-
-import { Link } from "react-router-dom";
-import { useApi } from "../../../Hooks/fetchApi//useApi.js";
+import {useApi}  from "../../../Hooks/fetchApi//useApi.js";
 import useService from "../../../Hooks/Services/useService.js";
-import { useContext } from "react";
-import { VideosContext } from "../../../Context/videoContext.jsx";
 
 
 
 
 
-const Card = ({ edit,playVideo, id, titulo, categoria, img, src, descricao, atualizarLista }) => {
+
+const Card = ({  id, titulo, categoria, img, src, descricao, atualizarLista }) => {
     // console.log("Card",{ id:id,titulo:titulo, categoria:categoria,img:img,src:src,desccricao:descricao});
 // console.log("Card: id: ", id);
     const { deleteVideo } = useApi();
-    const {editVideo} = useService();
+    const {editVideo,playVideo,atualizarListagemAposDelete} = useService();
     const handleEditClick = (event) => {
 
         const videoData = { id, titulo, categoria, img, src, descricao };
@@ -31,8 +27,9 @@ const Card = ({ edit,playVideo, id, titulo, categoria, img, src, descricao, atua
         playVideo(idVideo);        
     }
 
-    const handleDeleteClick = () => {
+    const handleDeleteClick = (event) => {
         // Passa o ID do vídeo para o método deleteVideo
+        event.preventDefault();
 
         const idVideo = Number(id);
         // console.log("Card Delete id:",idVideo);
@@ -40,7 +37,6 @@ const Card = ({ edit,playVideo, id, titulo, categoria, img, src, descricao, atua
         deleteVideo(idVideo);
         atualizarLista(id);
     };
-
 
 
 

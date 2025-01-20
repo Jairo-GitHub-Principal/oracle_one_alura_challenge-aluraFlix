@@ -4,6 +4,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 
@@ -16,6 +17,17 @@ body {
   padding: 0;
   background-color: black;
   margin: 0; 
+
+
+
+ 
+
+  
+}
+
+   
+
+
   
 }
 
@@ -24,7 +36,7 @@ h1 {
  padding: 0px;
 }
 
-@media(max-width:400px){
+@media(max-width:450px){
   body{
     display: flex;
     flex-direction: column;

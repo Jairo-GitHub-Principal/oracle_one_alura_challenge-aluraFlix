@@ -1,38 +1,33 @@
-import { useContext, useEffect } from "react";
 
 
 
-
-export const atualizarLista =(video,setVideo)=> {
-    setVideo((prevSt) => [...prevSt,video]);
-   }
-
-export const useApi= () => {
+ export const useApi= () => {
+    
    
 
-   
-       const getVideos = async (video, setVideo)=> {
+    // pegar videos
+       const getVideos = async (vd, setVd)=> {
         try {
             // Caminho da API - JSON Server - arquivo no GitHub
-            const resposta = await fetch("https://my-json-server.typicode.com/Jairo-GitHub-Principal/aluraFlix-api/videos");
+            //const resposta = await fetch("https://my-json-server.typicode.com/Jairo-GitHub-Principal/aluraFlix-api/videos");
             // Caminho do nosso localhost
-            //const resposta = await fetch("http://localhost:3000/videos");
+            const resposta = await fetch("http://localhost:3000/videos");
             
             const dados = await resposta.json();
-            setVideo(dados);
+            setVd(dados);
         } catch (erro) {
             console.error("Erro ao buscar vídeos:", erro);
         }
     }
     
 
-       /** salvar video */
+       
+    
+    
+    /** salvar video */
+   
 
-           // Atualizar listagem apos add video
-
-         
-
-    const saveVideo = async (video, setVideo) => {
+    const saveVideo = async (vd, setVd) => {
         console.log("Salvando novo vídeo");
         try {
             // Buscar vídeos existentes para pegar o último  ID registrado que tambem deve ser o id de maior valor
@@ -51,7 +46,7 @@ export const useApi= () => {
             console.log("latestVideo tem o tipo", typeof lastVideo);
             const newId = lastVideo ? lastVideo + 1 : 1;// se lastVideo for true, incrementa o lastVideo + 1 para criar um id de maior valor que o maior id existente na tabela de registros de video
             console.log("Novo id", newId);
-            video.id = String(newId); // Atribuindo novo ID ao vídeo
+            vd.id = String(newId); // Atribuindo novo ID ao vídeo
             
             // agora como ja sabemos qual é o maior id, e ja criamos um  novo id, podemos salvar o video
             const url = "http://localhost:3000/videos"; // URL para salvar um novo vídeo
@@ -63,14 +58,14 @@ export const useApi= () => {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(video), // Envia os dados no corpo da requisição
+                body: JSON.stringify(vd), // Envia os dados no corpo da requisição
                    
                
 
             }); 
             if(response.ok){
                 console.log("Video salvo com sucesso");
-                    getVideos(video, setVideo)
+                    getVideos(vd, setVd)
 
             }
     
@@ -87,12 +82,14 @@ export const useApi= () => {
     };
 
 
+    
+    
     /**atualizar um video existente */
 
-    const updateVideo = async (video,setVideo) => {
-        console.log("Atualizando vídeo", video);
-        console.log("Atualizando vídeo com ID:", video.id);
-        const id = Number(video.id);
+    const updateVideo = async (vd,setVd) => {
+        console.log("Atualizando vídeo", vd);
+        console.log("Atualizando vídeo com ID:", vd.id);
+        const id = Number(vd.id);
         try {
             const url = `http://localhost:3000/videos/${id}`; // URL para atualizar um vídeo específico
             const method = "PUT"; // Método PUT para atualizar o vídeo
@@ -103,12 +100,12 @@ export const useApi= () => {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(video), // Envia os dados no corpo da requisição
+                body: JSON.stringify(vd), // Envia os dados no corpo da requisição
             });
 
       
                 console.log("Video salvo com sucesso");
-                    getVideos(video, setVideo)
+                    getVideos(vd, setVd)
 
             
     
@@ -126,6 +123,10 @@ export const useApi= () => {
     };
 
 
+
+
+    // Deletar videos
+    // obs.: apos deletar, chamar a função atualizarlistadeletevideos, em useService, para atualizar a lista
     const deleteVideo = async (videoId) => {
 
         console.log("Deletando vídeo", videoId);
@@ -164,10 +165,8 @@ export const useApi= () => {
 
 
     };
-    
-    
-    
-    
+
+       
 
 
 
@@ -181,3 +180,4 @@ export const useApi= () => {
    
 
 }
+

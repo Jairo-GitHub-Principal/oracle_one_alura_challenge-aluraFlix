@@ -3,12 +3,16 @@ import { BannerStyled } from "./styleBanner";
 import style from "./banner.module.css"
 import Button from "../ReusableComponent/ButtonComponent/button";
 import imgVideo from "./imgbaner/imgVideo.png"
+import useService from "../../Hooks/Services/useService";
+
 
 const Banner = (props) => {
 
-    const handleClick = () => {
+    const { playVideo } = useService();
+
+    const handlePlay = () => {
         const url = "https://www.youtube.com/embed/7x4_HNC4Uu4?si=fUmZExvz3RRLS0G4";
-        props.playVideo(url);
+        playVideo(url);
     };
 
     return (
@@ -68,7 +72,7 @@ const Banner = (props) => {
             <div className={style.videoContainer} >
 
                 <img className={style.video} src={imgVideo} alt="Video"
-                    onClick={handleClick}
+                    onClick={handlePlay}
                 />
 
             </div>

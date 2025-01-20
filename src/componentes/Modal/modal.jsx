@@ -22,13 +22,11 @@ const Modal = () => {
         
         return (
             <div className={style.overlay}>
-
             <section className={style.novoVideoContainer}>
-               
-
+            
                 <div className={style.novoVideoTitulo}>
 
-                    <h1><Text size="60px" weight="900" color="white" family="Roboto" lineHeight="1.5">NOVO VÍDEO</Text>  </h1>
+                    <Text size="60px" weight="900" color="white" family="Roboto" lineHeight="1.5" textAline="center">NOVO VÍDEO</Text>
                     <Text size="25px" weight="400" color="white" family="Roboto" lineHeight="23px" textAline="center">Complete o formulário para criar um novo card de vídeo.</Text>
 
                 </div>
@@ -38,14 +36,14 @@ const Modal = () => {
                     <IoIosCloseCircleOutline  size={50} className={style.xclose} />
                 </button>
                     
-                    {/* <Form titulo="Criar Card de Video"
+                 <Form titulo="Criar Card de Video"
                         display="flex"
                         alignItems="center"
                         justifyContent="space-between"
                         padding="30px"
-                        setVideo={setVideo}
+                        setVideo={"http://localhost:3000/videos"}
 
-                    /> */}
+                    />
                 </div>
 
 

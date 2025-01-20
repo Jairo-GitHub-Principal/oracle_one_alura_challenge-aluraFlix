@@ -1,14 +1,13 @@
-import { useParams } from "react-router-dom";
 import style from "./player.module.css"
 import { VideosContext } from "../../Context/videoContext.jsx";
 import { useContext } from "react";
 
-const Player = ({idPlay,urlPlay}) => {
+const Player = () => {
     
     
    
 
-    const { video } = useContext(VideosContext);
+    const { video,idPlay,urlPlay } = useContext(VideosContext);
     let videoFilter={src:""};// precisei fazer assim pois se caso, não chegar o id pra fazer a filtragem, vai chegar uma url pronta, 
     // e como estou passando como props o videoFilter.src, o video vai ficar vazio, mais eu pego 
     //  url que chegar como props e passo como valor de src, assim não preciso mudar a props, videoFilter.src.

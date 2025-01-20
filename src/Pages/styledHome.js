@@ -12,8 +12,8 @@ const HomeStyled = styled.div`
     box-sizing: border-box;
     box-shadow: 0px 5px 29px 0px rgba(34, 113, 209, 0.7);
 
-    
-   
+    // mudar  a cor da barra de rolagem
+     
    
 `
 

@@ -16,32 +16,16 @@ import { VideosContext } from './Context/videoContext.jsx';
 function App() {
 
   const { isModaEditVideo,isModalOpenNovoVideo,isModalVideoOpen,
-          setIsModalVideo,
-          idPlay, setIdPlay,
-          urlPlay, setUrlPlay,
+          idPlay, 
+          urlPlay, 
           isModalTest
   } = useContext(VideosContext);
 
-  
-  const playVideo = (id) => {
-    /** abaixo temos uma  expressão regular de uma  url, que sera usada */
-    const isUrl = /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)(\/[\w-]*)*(\?.*)?(#.*)?$/;
-
-    setIsModalVideo(true);
-
-    if (isUrl.test(id)) { /**se for uma url chama o setUrlPlay, se não chama o setIdPlay  */
-      setUrlPlay(id);
-
-    } else {
-      setIdPlay(id);
-    }
-
-
-
-  };
+ 
 
   return (
-    <BrowserRouter className="app" >
+    <div className="container__router">    
+      <BrowserRouter className="app"  >
       {isModaEditVideo === true && ( // edit video
         <ModalEdit />
       )}
@@ -51,7 +35,7 @@ function App() {
       )}
 
       {isModalVideoOpen && (// Card video, Banner video
-        <ModalVideo idPlay={idPlay} urlPlay={urlPlay} />
+        <ModalVideo />
       )}
 
       {isModalTest && (
@@ -64,20 +48,17 @@ function App() {
         <Routes>
           <Route path="/" element={
             <Home
-              playVideo={playVideo}
             />} />
           <Route path="/videos" element={<Videos />} />
           <Route path="*" element={<Home />} />
-          {/* <Route path="/:id" element={<Player />} /> */}
-          {/* <Route path='/edit/:id' element={<ModalEdit />} /> */}
-          {/* <Route path='/novovideo' element={<NovoVideo />} /> */}
-
         </Routes>
 
         <Footer />
 
       </Container>
     </BrowserRouter>
+    </div>
+
   )
 }
 

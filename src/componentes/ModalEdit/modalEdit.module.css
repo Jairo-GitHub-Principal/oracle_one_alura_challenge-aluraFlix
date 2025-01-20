@@ -1,50 +1,150 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Anton&family=Archivo+Black&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Playwrite+AU+VIC+Guides&family=Playwrite+CO+Guides&family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour:BLED,SCAN@0..100,-24&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
+
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
-
-    
-  }
-  
-  .modalContent {
-    position: relative;
-    background: #070000;
-    padding: 20px;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 974px;
-    height: 100%;
-    max-height: 1200px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
     box-sizing: border-box;
-    padding: 60px 30px;
-
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 0px;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    
+   
+    
 
     
   }
+
+
+.novoVideoContainer {
+    position: relative;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    box-sizing: border-box;
+    border-radius: 15px 15px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
   
-  .modalclose {
+
+
+}
+
+.xclose{
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  z-index: 1000;
+  border-radius: 50%;
+}
+.novoVideoTitulo {
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    background-color:rgba(0, 0, 0, 0.9);
+    padding:10px;
+   
+}
+
+.novoVideoForm {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 80%;
+    background-color:rgba(0, 0, 0, 0.1);
+    
+   }
+
+@media(max-width:450px){
+  .novoVideoTitulo {
+    position:absolute;
+    top: 3px;
+
+    width: 99%;
+   
+   
+}
+
+.novoVideoForm {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 90%;
+  background-color:rgba(0, 0, 0, 0.1);
+
+ }
+
+ .xclose{
+ 
+  top: 0px;
+  right: 0px;
+ 
+}
+
+  }
+
+  @media screen and (orientation: landscape) and (max-height: 450px) {
+    .modalclose {
+     
+      top: 0px;
+      right: 0px;
+       
+  
+    }
+
+    .xclose{
+ 
+      top: 0px;
+      right: 0px;
+     
+    }
+
+  }
+
+.modalclose {
     position: absolute;
-    top: 75px;
-    right: 40px;
+    top: 10px;
+    right: 10px;
     background: transparent;
     border: none;
-    font-size: 1.5rem;
+  
     cursor: pointer;
     color: white;
     transition: border-color 0.3s ease;
-    font-size: 30px;
+    font-size: 20px;
     z-index: 1000;
+    
 
-   
     
 
   }
@@ -60,76 +160,8 @@
    scale: 0.9;
   }
 
-  .btn{
-    width: 100%;
-    max-width: 200px;
-    height: 62px;
-    border: 3px solid  rgba(34, 113, 209, 1);
-    border-radius: 15px 15px ;
-    background-color: #000000;
-    color: #ffffff;
-    font-family: "IBM Plex Mono", serif;
-    font-style: normal;
-    font-size: 25px;
-    font-weight: 500;
-    line-height: 24px;
-    text-align: center;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-    margin: 0;
-    padding: 0;
-    transition: border-color 0.3s ease;
-    cursor: pointer;
-
-}
-.btn:active{
-    border-color: #2003ff; /* Altere para a cor desejada */
-    box-shadow: 0px 0px 5px 5px rgb(0, 79, 175);    
-    scale: 0.95;
-    color: #0082ce;
-}
-
-.btn:hover {
-    border-color: #2003ff; /* Altere para a cor desejada */
-    box-shadow: 0px 0px 5px 5px rgb(0, 79, 175);
-    
-}
 
 
-@media(max-width:420px){
-  .modalclose {
-    position: absolute;
-    top: 75px;
-    right: 40px;
-    background: transparent;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: white;
-    transition: border-color 0.3s ease;
-    font-size: 20px;
-    z-index: 1000;
+/*fechar o modal*/
 
-   
-    
 
-  }
-}
-  
-
-@media screen and (orientation: landscape) and (max-height: 450px) {
-  .modalclose {
-    
-    position: fixed;
-    top: 10px;
-    margin: 2px;
-    background: transparent;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: white;
-    transition: border-color 0.3s ease;
-    font-size: 20px;
-    z-index: 1000;
-}
-}

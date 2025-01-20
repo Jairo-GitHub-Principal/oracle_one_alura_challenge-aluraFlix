@@ -12,47 +12,36 @@ import useService from "../../Hooks/Services/useService.js";
 
 const ModalEdit = () => {
   // console.log("ModalEdit",videoEdit);
-  const {  setVideo,videoEdit,isModaEditVideo } = useContext(VideosContext)
-  const {closeModal} = useService();
-  console.log("ModalEdit isModalOpen",isModaEditVideo);
+  const { setVideo, videoEdit, isModaEditVideo } = useContext(VideosContext)
+  const { closeModal } = useService();
+  console.log("ModalEdit isModalOpen", isModaEditVideo);
 
 
   if (!isModaEditVideo) {// quando isOpen for falso
     return null; //não exibe o modal
   } else {
     return ( // exibe o modal
-      <OverLay >
-        <DialogStyled />
-        <ModalContainer >
-
-        
-         <div>
-         <button className={style.modalclose} onClick={closeModal}>
-         <IoIosCloseCircleOutline  size={50} className={style.xclose} />
-         </button>
-
-          <Form video={videoEdit}
-            setVideo={setVideo}
-            onSubmit={() => console.log("Lista atualizada!")}
-            titulo="Editar Card de Video"
-            display="flex"
-            flexDirection="column"
-            alignItems="center"
-            justifyContent="space-between"
-            padding="30px"
-          />
-
-</div>
-
-         
-
+      <div className={style.overlay}>
+        <section className={style.novoVideoContainer}>
           
-          
-           
-          
+        <div className={style.novoVideoForm}>
+            <button className={style.modalclose} onClick={closeModal}>
+              <IoIosCloseCircleOutline size={50} className={style.xclose} />
+            </button>
 
-        </ModalContainer>
-      </OverLay>
+            <Form video={videoEdit}
+              setVideo={setVideo}
+              onSubmit={() => console.log("Lista atualizada!")}
+              titulo="Editar Card de Video"
+              display="flex"
+              flexDirection="column"
+              alignItems="center"
+              justifyContent="space-between"
+              padding="30px"
+            />
+        </div>
+        </section>
+      </div>
     );
   }
 

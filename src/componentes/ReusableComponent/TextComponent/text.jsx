@@ -5,6 +5,7 @@ const Text = ({tabletFont,smartPhoneFont,children,size,weight,color,margin,paddi
     <>
     <TextContainerStyled $width={width} $maxWidth= {maxWidth} $height={height}  >
       <TextStyled
+      padding="0px"
        $size={size} 
        $weight={weight} 
        $color={color} 
