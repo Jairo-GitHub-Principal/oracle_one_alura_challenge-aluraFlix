@@ -9,9 +9,9 @@
        const getVideos = async (vd, setVd)=> {
         try {
             // Caminho da API - JSON Server - arquivo no GitHub
-            //const resposta = await fetch("https://my-json-server.typicode.com/Jairo-GitHub-Principal/aluraFlix-api/videos");
+            const resposta = await fetch("https://my-json-server.typicode.com/Jairo-GitHub-Principal/aluraFlix-api/videos");
             // Caminho do nosso localhost
-            const resposta = await fetch("http://localhost:3000/videos");
+            //const resposta = await fetch("http://localhost:3000/videos");
             
             const dados = await resposta.json();
             setVd(dados);
