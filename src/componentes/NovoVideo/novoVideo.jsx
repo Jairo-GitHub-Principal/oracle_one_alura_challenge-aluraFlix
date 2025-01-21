@@ -27,8 +27,8 @@ const NovoVideo = () => {
 
                 <div className={style.novoVideoTitulo}>
 
-                    <h1><Text size="60px" weight="900" color="white" family="Roboto" lineHeight="1.5">NOVO VÍDEO</Text>  </h1>
-                    <Text size="25px" weight="400" color="white" family="Roboto" lineHeight="23px" textAline="center">Complete o formulário para criar um novo card de vídeo.</Text>
+                    <h1><Text size="30px" weight="900" color="white" family="Roboto" lineHeight="1.5">NOVO VÍDEO</Text>  </h1>
+                    <Text size="20px" weight="400" color="white" family="Roboto" lineHeight="23px" textAline="center">Complete o formulário para criar um novo card de vídeo.</Text>
 
                 </div>
 

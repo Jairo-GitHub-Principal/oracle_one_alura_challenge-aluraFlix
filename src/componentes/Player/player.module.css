@@ -8,8 +8,7 @@
     justify-content: center;
     width: 100%;
     max-width:1442px;
-    height: 100vh;
-    max-height: 700px;
+    height: 80vh;
     box-sizing: border-box;
     padding: 10px;
 }
@@ -84,6 +83,7 @@
 
 @media screen and (orientation: landscape) and (max-height: 450px) {
     .player {
+      width: 90%;
       /* Adicione os estilos desejados para o modal */
       transform: scale(1.1); /* Exemplo de efeito */
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);

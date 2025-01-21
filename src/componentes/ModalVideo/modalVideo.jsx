@@ -17,7 +17,6 @@ const ModalVideo = () => {
     return ( // exibe o modal
       <div className={styles.overlay} >
 
-          <dialog className={styles.dialogStyled}></dialog>
 
                <div className={styles.modalContainer} >
                     <button className={styles.modalclose} onClick={closeModal}>Fechar</button>
