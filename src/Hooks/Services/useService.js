@@ -2,11 +2,13 @@
 
 import { useContext } from "react";
 import { VideosContext } from "../../Context/videoContext";
+import { useApi } from "../../Hooks/fetchApi/useApi";
 
 
 
 const useService = () => {
 
+   const {deleteVideo} = useApi(); // a função deleta sera chamada aqui nos serviços, ao inves do componente card
 const {
   isModalTest,isModalOpenNovoVideo,isModaEditVideo,isModalVideoOpen,
   activeButton,  
@@ -97,12 +99,32 @@ const {
         // console.log("useService videoEdit ", videoEdit);
       };
 
+      const deletarVideo = (id) => {
+        
+        console.log("deletarVideo clicado" , id);
+        deleteVideo(id);
+       
+      };
+     
+     
+      const atualizarListVideos = (id) => {
+        console.log("atualizarVideos",id);
+
+        /** função para atualizar a lista de videos quando um video é deletado
+    obs.: ao deletarr um video o mesmo sera deletado no banco de dados onde esta  armazenado o video
+    mais a função  deletarVideo da api, não remove o video da do state do cocntext api, que prove os videos
+    para toda a aplicação, então essa função é cchamada logo apos chamar a função deletar video for chamada no componente  card
+    Essa função faz uma filtrragem no state e retorna os videos que nao tiverem o id do video que foi deletado
+    e atualiza o estado com os videos filtrados
+     */
+    setVideo((prevSt) => prevSt.filter((video) => video.id !== id));
+      };
     
 
 
     return {
          abrirModal,closeModal,
-         criarCardVideo,editVideo,playVideo,
+         criarCardVideo,editVideo,playVideo,deletarVideo,atualizarListVideos
          
     
     };

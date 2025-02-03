@@ -37,6 +37,8 @@ const CategoriaMovieContainerStyled = styled.section` // vai  conter apenas  o c
     box-sizing: border-box;
     margin-top: 40px;
     box-sizing: border-box;
+    padding :20px ;
+  
     
     // personalizar o scrollbar 
 
@@ -73,7 +75,11 @@ const CategoriaMovieContainerStyled = styled.section` // vai  conter apenas  o c
         gap: 10px; /* Espaçamento entre os itens */
         padding: 10px; /* Espaçamento interno */
         justify-content: flex-start;
-        /* Opcional: remover borda para melhorar o layout */       
+        /* Opcional: remover borda para melhorar o layout */    
+        
+        &&:hover{
+            padding: 10px;
+        }
     }
     
     `

@@ -15,10 +15,7 @@ import { VideosContext } from './Context/videoContext.jsx';
 
 function App() {
 
-  const { isModaEditVideo,isModalOpenNovoVideo,isModalVideoOpen,
-          idPlay, 
-          urlPlay, 
-          isModalTest
+  const { isModaEditVideo,isModalOpenNovoVideo,isModalVideoOpen,isModalTest
   } = useContext(VideosContext);
 
  

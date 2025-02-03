@@ -138,7 +138,7 @@
         }
     
         const url = `http://localhost:3000/videos/${videoId}`; // URL para deletar um vídeo específico
-    
+
         try {
             // Enviar a requisição DELETE para o servidor
             const response = await fetch(url, {
@@ -146,9 +146,11 @@
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body:videoId,
+                // body:videoId,  não e nescessario para o metodo delete
                 
             });
+
+
             
             if (!response.ok) {
                 throw new Error("Erro ao deletar o vídeo");

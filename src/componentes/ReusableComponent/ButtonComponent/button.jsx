@@ -1,4 +1,3 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
 import { ButtonStyled } from "./styledButton";
 import { memo } from "react";
 import PropTypes from 'prop-types'; // fazer validação de props
@@ -6,14 +5,12 @@ import PropTypes from 'prop-types'; // fazer validação de props
 
 // eslint-disable-next-line react/prop-types
 const Button = memo(  ({ children, $padding, $size, $border, $width, $height, $weight,$categoria,click,$fontTablet,$alignSelf,$buttonSamrtPhone,$paddingSamrtPhone,$hide,activeButton}) => {
-    // console.log("activeButton no compoente button",activeButton);
-    // const [isActive, setIsActive] = useState("");
    
 
 
        const handleClick =  (event) => {
         
-        event.preventDefault(); // Impede o carregamento da página
+        // event.preventDefault(); // Impede o carregamento da página
     
         // Verifica se `click` é uma função antes de chamá-la
         if (typeof click === "function") {

@@ -14,7 +14,7 @@ import useService from "../../Hooks/Services/useService.js";
 
 const Header = (props) => {
     
-    const {abrirModal, criarCardVideo} = useService();
+    const { criarCardVideo} = useService();
     const{activeButton, setActiveButton}=useContext(VideosContext);
     
 

@@ -18,6 +18,14 @@ const CardContainerStyled = styled.div`
     margin:0;
     padding: 0;
 
+    &:hover{
+       scale: 1.09;
+       transition: 0.5s;
+      
+    }
+
+    
+
     // condição para cor da borda do card
     /** condição para a cor do botão e a cor do texto */
     border: ${({ $categoria }) => {
@@ -37,9 +45,12 @@ const CardContainerStyled = styled.div`
         width: 80%;
         
 
-@media(max-width:420px){
+@media(max-width:450px){
     min-width: 100%;
+
+    
 }}
+
 
 
 
